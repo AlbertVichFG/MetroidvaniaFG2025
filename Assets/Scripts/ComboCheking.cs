@@ -25,4 +25,9 @@ public class ComboCheking : MonoBehaviour
         player.CheckCombo2();
 
     }
+
+    public void FinishAttackHeavy()
+    {
+        player.FinishHeavyAttack();
+    }
 }

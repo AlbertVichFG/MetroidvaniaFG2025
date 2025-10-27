@@ -12,12 +12,26 @@ public class PlayerController : MonoBehaviour
     private float jumpForce;
     [SerializeField]
     private float groundDistance;
+
+    [Header ("FireBall")]
+    [SerializeField]
+    private GameObject fireballPrefab;
+    [SerializeField]
+    private Transform spawnPoint;
+    [SerializeField]
+    private float coldDown;
+    private float timePasFireBall;
+
+    [SerializeField]
+    private float costFireBall;
     
 
 
 
     //Temporal
     private int maxJumps = 1;
+    public float mana;
+    public float maxMana;
 
     
 
@@ -66,6 +80,17 @@ public class PlayerController : MonoBehaviour
                 JumpCount++;
             }
             CheckJump();
+
+            if (Input.GetButtonDown("FireBall"))
+            {
+                if (coldDown <= timePasFireBall && mana >= costFireBall)
+                {
+                    Instantiate(fireballPrefab, spawnPoint.position, spawnPoint.rotation);
+                    mana -= costFireBall;
+                    timePasFireBall = 0;
+                }
+
+            }
         }
         else
         {
@@ -73,7 +98,7 @@ public class PlayerController : MonoBehaviour
         }
 
         
-
+        //Atack
 
         if (JumpCount == 0)
         {
@@ -83,7 +108,17 @@ public class PlayerController : MonoBehaviour
                 animator.SetInteger("Comboo", comboCount);
 
             }
+            if (Input.GetButtonDown("Fire2") && comboCount == 0)
+            {
+                animator.SetTrigger("AttackHeavy");
+                comboCount = 1;
+            }
         }
+
+        timePasFireBall += Time.deltaTime;
+
+        
+        
     }
 
     public void CheckCombo1()
@@ -95,6 +130,12 @@ public class PlayerController : MonoBehaviour
         }
     }
     public void CheckCombo2()
+    {
+        comboCount = 0;
+        animator.SetInteger("Comboo", comboCount);
+    }
+
+    public void FinishHeavyAttack()
     {
         comboCount = 0;
         animator.SetInteger("Comboo", comboCount);
