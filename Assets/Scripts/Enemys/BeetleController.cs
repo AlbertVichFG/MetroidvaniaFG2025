@@ -12,5 +12,18 @@ public class BeetleController : EnemyController
     void Update()
     {
         base.Update();
+        if (attacking == true)
+        {
+            animator.SetBool("IsAttacking", true);
+
+            Vector3 distance = player.position - transform.position;
+            float distanceSq = distance.sqrMagnitude;
+            if(distanceSq > Mathf.Pow(stopDistance, 2))
+            {
+                attacking = false;
+                animator.SetBool("IsAttacking", false);
+
+            }
+        }
     }
 }
