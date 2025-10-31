@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: f5b07cc1a456363499e8e32162c6797f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5734021116463147287
+    second: TX FX Light Shaft_0
+  - first:
+      213: 8497782511332358796
+    second: TX FX Light Shaft_1
+  - first:
+      213: -7508878887931712796
+    second: TX FX Light Shaft_2
+  - first:
+      213: 2354567629465633192
+    second: TX FX Light Shaft_3
+  - first:
+      213: -754977134042174593
+    second: TX FX Light Shaft_4
+  - first:
+      213: -1405251398099717205
+    second: TX FX Light Shaft_5
+  - first:
+      213: 5612021611635519462
+    second: TX FX Light Shaft_6
+  - first:
+      213: 7332293586667264545
+    second: TX FX Light Shaft_7
+  - first:
+      213: 1369315518766427086
+    second: TX FX Light Shaft_8
+  - first:
+      213: 3328067463126369348
+    second: TX FX Light Shaft_9
+  - first:
+      213: -3225793269497297249
+    second: TX FX Light Shaft_10
+  - first:
+      213: 9089848678229137859
+    second: TX FX Light Shaft_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TX FX Light Shaft_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 913
+        width: 89
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 719ef5543d5539f40800000000000000
+      internalID: 5734021116463147287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Light Shaft_1
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 923
+        width: 59
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8afd7ebb203ee570800000000000000
+      internalID: 8497782511332358796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Light Shaft_2
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 913
+        width: 66
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ea66676f6a1bc790800000000000000
+      internalID: -7508878887931712796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Light Shaft_3
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 913
+        width: 66
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a1cee1b8ca1da020800000000000000
+      internalID: 2354567629465633192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Light Shaft_4
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 913
+        width: 66
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7bafdfeb48c585f0800000000000000
+      internalID: -754977134042174593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Light Shaft_5
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 924
+        width: 79
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba3352c7c4b8f7ce0800000000000000
+      internalID: -1405251398099717205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Light Shaft_6
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 671
+        width: 218
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6efa9590ce7e1ed40800000000000000
+      internalID: 5612021611635519462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Light Shaft_7
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 660
+        width: 208
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12a5d2e3b2a81c560800000000000000
+      internalID: 7332293586667264545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Light Shaft_8
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 665
+        width: 212
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecba0899539c00310800000000000000
+      internalID: 1369315518766427086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Light Shaft_9
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 562
+        width: 97
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 444ce2099bbaf2e20800000000000000
+      internalID: 3328067463126369348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Light Shaft_10
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 125
+        width: 48
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9684c4cc1eab33d0800000000000000
+      internalID: -3225793269497297249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Light Shaft_11
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 51
+        width: 58
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c9d6e77631a52e70800000000000000
+      internalID: 9089848678229137859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TX FX Light Shaft_0: 5734021116463147287
+      TX FX Light Shaft_1: 8497782511332358796
+      TX FX Light Shaft_10: -3225793269497297249
+      TX FX Light Shaft_11: 9089848678229137859
+      TX FX Light Shaft_2: -7508878887931712796
+      TX FX Light Shaft_3: 2354567629465633192
+      TX FX Light Shaft_4: -754977134042174593
+      TX FX Light Shaft_5: -1405251398099717205
+      TX FX Light Shaft_6: 5612021611635519462
+      TX FX Light Shaft_7: 7332293586667264545
+      TX FX Light Shaft_8: 1369315518766427086
+      TX FX Light Shaft_9: 3328067463126369348
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

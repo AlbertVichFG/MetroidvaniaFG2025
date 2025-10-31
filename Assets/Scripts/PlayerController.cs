@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Config")]
     [SerializeField]
     private float speed;
     private Rigidbody2D rb;
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private float jumpForce;
     [SerializeField]
     private float groundDistance;
+    
 
     [Header ("FireBall")]
     [SerializeField]
@@ -26,12 +28,12 @@ public class PlayerController : MonoBehaviour
     private float costFireBall;
     
 
+    private LevelManager levelManager;
 
 
     //Temporal
     private int maxJumps = 1;
-    public float mana;
-    public float maxMana;
+
 
     
 
@@ -40,6 +42,8 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
+        //Buscar lvlmanager en l'escena per nom
+        levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
 
     }
 
@@ -83,10 +87,11 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetButtonDown("FireBall"))
             {
-                if (coldDown <= timePasFireBall && mana >= costFireBall)
+                if (coldDown <= timePasFireBall && GameManager.instance.GetGameData.PlayerMana >= costFireBall)
                 {
                     Instantiate(fireballPrefab, spawnPoint.position, spawnPoint.rotation);
-                    mana -= costFireBall;
+                    GameManager.instance.GetGameData.PlayerMana -= costFireBall;
+                    levelManager.UpdateMana();
                     timePasFireBall = 0;
                 }
 
@@ -121,6 +126,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    //Atacs personatge + animacio
     public void CheckCombo1()
     {
         if (comboCount < 2)
@@ -176,12 +182,38 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
+    //Atacar enemic
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("HitTHAT!");
+            int comboAnimator = animator.GetInteger("Comboo");
+            if (comboAnimator > 0)
+            {
+                collision.gameObject.GetComponent<EnemyController>().TakeDmg(GameManager.instance.GetGameData.PlayerDmg);
+            }
+            else
+            {
+                collision.gameObject.GetComponent<EnemyController>().TakeDmg(GameManager.instance.GetGameData.HeavyDmg);
+            }
+        }
+    }
+
+    public void TakeDmg(float _dmg)
+    {
+        GameManager.instance.GetGameData.PlayerLIFE -= _dmg;
+        levelManager.UpdateLife();
+        if (GameManager.instance.GetGameData.PlayerLIFE <= 0)
+        {
+            //Muerte
+            animator.SetTrigger("Death");
+            //Treure panel GameOver
+            //Tornar punt guardat
+        }
+        else
+        {
+            //gethit
+            animator.SetTrigger("Hit");
         }
     }
 }

@@ -1,0 +1,1989 @@
+fileFormatVersion: 2
+guid: 6259f576e8b23334a9107f0dfcea9171
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2356135772275001221
+    second: TX FX Caudron Smoke_0
+  - first:
+      213: -7993163672924572064
+    second: TX FX Caudron Smoke_1
+  - first:
+      213: 5146320401615102404
+    second: TX FX Caudron Smoke_2
+  - first:
+      213: 4298275522181664666
+    second: TX FX Caudron Smoke_3
+  - first:
+      213: -783954143333890963
+    second: TX FX Caudron Smoke_4
+  - first:
+      213: -7362279381019571479
+    second: TX FX Caudron Smoke_5
+  - first:
+      213: -1674869298654813012
+    second: TX FX Caudron Smoke_6
+  - first:
+      213: 5882973797804251139
+    second: TX FX Caudron Smoke_7
+  - first:
+      213: 6789413804929530641
+    second: TX FX Caudron Smoke_8
+  - first:
+      213: -6638552906215090109
+    second: TX FX Caudron Smoke_9
+  - first:
+      213: 7098476521393181921
+    second: TX FX Caudron Smoke_10
+  - first:
+      213: 8198066455126198595
+    second: TX FX Caudron Smoke_11
+  - first:
+      213: 5267747994291329862
+    second: TX FX Caudron Smoke_12
+  - first:
+      213: -3221853857155286738
+    second: TX FX Caudron Smoke_13
+  - first:
+      213: -1949327750571893752
+    second: TX FX Caudron Smoke_14
+  - first:
+      213: -7480182052777144056
+    second: TX FX Caudron Smoke_15
+  - first:
+      213: -3515891637952146030
+    second: TX FX Caudron Smoke_16
+  - first:
+      213: 3629052371890149852
+    second: TX FX Caudron Smoke_17
+  - first:
+      213: -4316834838109004853
+    second: TX FX Caudron Smoke_18
+  - first:
+      213: 3269979596248484782
+    second: TX FX Caudron Smoke_19
+  - first:
+      213: -1912231367417992337
+    second: TX FX Caudron Smoke_20
+  - first:
+      213: 5067978335327476286
+    second: TX FX Caudron Smoke_21
+  - first:
+      213: -5339328917763374953
+    second: TX FX Caudron Smoke_22
+  - first:
+      213: -7670259432463565460
+    second: TX FX Caudron Smoke_23
+  - first:
+      213: -4965889168668387030
+    second: TX FX Caudron Smoke_24
+  - first:
+      213: 7064546026533871902
+    second: TX FX Caudron Smoke_25
+  - first:
+      213: -877187290676554923
+    second: TX FX Caudron Smoke_26
+  - first:
+      213: 3417728748159399111
+    second: TX FX Caudron Smoke_27
+  - first:
+      213: -6393617625617615703
+    second: TX FX Caudron Smoke_28
+  - first:
+      213: -2462525807959024825
+    second: TX FX Caudron Smoke_29
+  - first:
+      213: 7550002380298005419
+    second: TX FX Caudron Smoke_30
+  - first:
+      213: -1202959058048900387
+    second: TX FX Caudron Smoke_31
+  - first:
+      213: -7435358760095388302
+    second: TX FX Caudron Smoke_32
+  - first:
+      213: -6198684203552939423
+    second: TX FX Caudron Smoke_33
+  - first:
+      213: 2169297635412073361
+    second: TX FX Caudron Smoke_34
+  - first:
+      213: 7119359782167540807
+    second: TX FX Caudron Smoke_35
+  - first:
+      213: -1650785838262114450
+    second: TX FX Caudron Smoke_36
+  - first:
+      213: 366704780390761016
+    second: TX FX Caudron Smoke_37
+  - first:
+      213: -5204338530189305869
+    second: TX FX Caudron Smoke_38
+  - first:
+      213: 3894960488759713290
+    second: TX FX Caudron Smoke_39
+  - first:
+      213: 1862692184633808485
+    second: TX FX Caudron Smoke_40
+  - first:
+      213: -4878266261636682244
+    second: TX FX Caudron Smoke_41
+  - first:
+      213: -7776947983241018991
+    second: TX FX Caudron Smoke_42
+  - first:
+      213: 6953295259747922930
+    second: TX FX Caudron Smoke_43
+  - first:
+      213: 1272993792404835300
+    second: TX FX Caudron Smoke_44
+  - first:
+      213: 7839894276529663048
+    second: TX FX Caudron Smoke_45
+  - first:
+      213: 273876280295543989
+    second: TX FX Caudron Smoke_46
+  - first:
+      213: -3157147640325885242
+    second: TX FX Caudron Smoke_47
+  - first:
+      213: -4323276089183836808
+    second: TX FX Caudron Smoke_48
+  - first:
+      213: 806286370417836423
+    second: TX FX Caudron Smoke_49
+  - first:
+      213: -744949871807967298
+    second: TX FX Caudron Smoke_50
+  - first:
+      213: -8664319199824417337
+    second: TX FX Caudron Smoke_51
+  - first:
+      213: -5791428495666407264
+    second: TX FX Caudron Smoke_52
+  - first:
+      213: 5265334751988677463
+    second: TX FX Caudron Smoke_53
+  - first:
+      213: 6805750388727540060
+    second: TX FX Caudron Smoke_54
+  - first:
+      213: -6005082552301001689
+    second: TX FX Caudron Smoke_55
+  - first:
+      213: 3179820265226595892
+    second: TX FX Caudron Smoke_56
+  - first:
+      213: 8917909462122010184
+    second: TX FX Caudron Smoke_57
+  - first:
+      213: 7200716470652206144
+    second: TX FX Caudron Smoke_58
+  - first:
+      213: -6801864433030735338
+    second: TX FX Caudron Smoke_59
+  - first:
+      213: -38233783011304182
+    second: TX FX Caudron Smoke_60
+  - first:
+      213: 3150176896833563089
+    second: TX FX Caudron Smoke_61
+  - first:
+      213: -5253064494787437046
+    second: TX FX Caudron Smoke_62
+  - first:
+      213: 8743172247544342608
+    second: TX FX Caudron Smoke_63
+  - first:
+      213: 8490897790003813532
+    second: TX FX Caudron Smoke_64
+  - first:
+      213: 1583461883686789313
+    second: TX FX Caudron Smoke_65
+  - first:
+      213: 190370414103052095
+    second: TX FX Caudron Smoke_66
+  - first:
+      213: 7299052820787559938
+    second: TX FX Caudron Smoke_67
+  - first:
+      213: 3376743329189832936
+    second: TX FX Caudron Smoke_68
+  - first:
+      213: -7440798279203682106
+    second: TX FX Caudron Smoke_69
+  - first:
+      213: -3223402117399188190
+    second: TX FX Caudron Smoke_70
+  - first:
+      213: 966612101543653239
+    second: TX FX Caudron Smoke_71
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 223
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7835fa9ff25d4fd0800000000000000
+      internalID: -2356135772275001221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 223
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06636c33df3921190800000000000000
+      internalID: -7993163672924572064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 223
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c12d9e83276b6740800000000000000
+      internalID: 5146320401615102404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_3
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 191
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9f056e60da86ab30800000000000000
+      internalID: 4298275522181664666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_4
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 223
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6443663cd5de15f0800000000000000
+      internalID: -783954143333890963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_5
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 215
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ea4525f8ede3d990800000000000000
+      internalID: -7362279381019571479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_6
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 221
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca4e8782f3ba1c8e0800000000000000
+      internalID: -1674869298654813012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_7
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 223
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3089d01ff7584a150800000000000000
+      internalID: 5882973797804251139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_8
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 223
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11b35fb32e7d83e50800000000000000
+      internalID: 6789413804929530641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_9
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 223
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 348996aed4f1fd3a0800000000000000
+      internalID: -6638552906215090109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_10
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 191
+        width: 25
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e4571079cad28260800000000000000
+      internalID: 7098476521393181921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_11
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 191
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 349c7d6710265c170800000000000000
+      internalID: 8198066455126198595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_12
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 191
+        width: 23
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64bd20e14ecca1940800000000000000
+      internalID: 5267747994291329862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_13
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 188
+        width: 23
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e29790eacfca943d0800000000000000
+      internalID: -3221853857155286738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_14
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 189
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80cd9542db892f4e0800000000000000
+      internalID: -1949327750571893752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_15
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 191
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80157f00e0e013890800000000000000
+      internalID: -7480182052777144056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_16
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 191
+        width: 23
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 295981bee2b053fc0800000000000000
+      internalID: -3515891637952146030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_17
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 159
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd91dc997ebfc5230800000000000000
+      internalID: 3629052371890149852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_18
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 127
+        width: 25
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcb5b7816958714c0800000000000000
+      internalID: -4316834838109004853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_19
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 159
+        width: 23
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eab8a212e1d416d20800000000000000
+      internalID: 3269979596248484782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_20
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 145
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6be0b8e3b36675e0800000000000000
+      internalID: -1912231367417992337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_21
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 159
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3ad196d173155640800000000000000
+      internalID: 5067978335327476286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_22
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 158
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7904eb563a4e6e5b0800000000000000
+      internalID: -5339328917763374953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_23
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 153
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6d7be85fa3cd8590800000000000000
+      internalID: -7670259432463565460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_24
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 155
+        width: 25
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a299f8b8c1e951bb0800000000000000
+      internalID: -4965889168668387030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_25
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 159
+        width: 25
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e11e2fa7e2f4a0260800000000000000
+      internalID: 7064546026533871902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_26
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 159
+        width: 25
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5539cb18eca93d3f0800000000000000
+      internalID: -877187290676554923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_27
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 127
+        width: 25
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c47ea440363e6f20800000000000000
+      internalID: 3417728748159399111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_28
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 127
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a4b263f4ae4547a0800000000000000
+      internalID: -6393617625617615703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_29
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 146
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74bde5e13d953ddd0800000000000000
+      internalID: -2462525807959024825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_30
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 127
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bab240bc92ff6c860800000000000000
+      internalID: 7550002380298005419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_31
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 127
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd228a93c1b3e4fe0800000000000000
+      internalID: -1202959058048900387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_32
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 127
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27dece61a9c40d890800000000000000
+      internalID: -7435358760095388302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_33
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 127
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 162e6641f89d9f9a0800000000000000
+      internalID: -6198684203552939423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_34
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 127
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19bd4dab4b4ea1e10800000000000000
+      internalID: 2169297635412073361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_35
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 63
+        width: 25
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7447c4c700c0dc260800000000000000
+      internalID: 7119359782167540807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_36
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 95
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e67242eb60b3719e0800000000000000
+      internalID: -1650785838262114450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_37
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 95
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83201ac0e0cc61500800000000000000
+      internalID: 366704780390761016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_38
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 63
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f710393ea976c7b0800000000000000
+      internalID: -5204338530189305869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_39
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 95
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0e54ba9dedad0630800000000000000
+      internalID: 3894960488759713290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_40
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 63
+        width: 23
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5669ef64cac99d910800000000000000
+      internalID: 1862692184633808485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_41
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 60
+        width: 26
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfd6f536eaaec4cb0800000000000000
+      internalID: -4878266261636682244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_42
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 93
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1918a36630bb21490800000000000000
+      internalID: -7776947983241018991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_43
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 95
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f3bea7d2311f7060800000000000000
+      internalID: 6953295259747922930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_44
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 95
+        width: 25
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4eb419d0c159aa110800000000000000
+      internalID: 1272993792404835300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_45
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 95
+        width: 25
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84c2b259e46eccc60800000000000000
+      internalID: 7839894276529663048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_46
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 63
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b4db6f96010dc300800000000000000
+      internalID: 273876280295543989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_47
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 63
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c2b9eac2fe8f24d0800000000000000
+      internalID: -3157147640325885242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_48
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 63
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 875e1467d43a004c0800000000000000
+      internalID: -4323276089183836808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_49
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 63
+        width: 23
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7818ef79e21803b00800000000000000
+      internalID: 806286370417836423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_50
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 31
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebfc96bd90869a5f0800000000000000
+      internalID: -744949871807967298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_51
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 31
+        width: 23
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cd6ed1e79722c780800000000000000
+      internalID: -8664319199824417337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_52
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 48
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a89abda776b0afa0800000000000000
+      internalID: -5791428495666407264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_53
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 28
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75bfdcb5f0a321940800000000000000
+      internalID: 5265334751988677463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_54
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 49
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c59e41e8be1e27e50800000000000000
+      internalID: 6805750388727540060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_55
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 22
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 724e3372c39a9aca0800000000000000
+      internalID: -6005082552301001689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_56
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 25
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43e6b6e0fadf02c20800000000000000
+      internalID: 3179820265226595892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_57
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 29
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84690ec1867c2cb70800000000000000
+      internalID: 8917909462122010184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_58
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 31
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04c7781aa751ee360800000000000000
+      internalID: 7200716470652206144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_59
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 46
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61ad6d2065cea91a0800000000000000
+      internalID: -6801864433030735338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_60
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 31
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0d1131b39a287ff0800000000000000
+      internalID: -38233783011304182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_61
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 17
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d92863823da7bb20800000000000000
+      internalID: 3150176896833563089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_62
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 0
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0e5af58cad5917b0800000000000000
+      internalID: -5253064494787437046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_63
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 18
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0582fe8f5dcf55970800000000000000
+      internalID: 8743172247544342608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_64
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 0
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9c9355ad8ab5d570800000000000000
+      internalID: 8490897790003813532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_65
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 18
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c0a584913699f510800000000000000
+      internalID: 1583461883686789313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_66
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 0
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3f3b5c02e454a200800000000000000
+      internalID: 190370414103052095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_67
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20efad35ed17b4560800000000000000
+      internalID: 7299052820787559938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_68
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 0
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e8a70aca2a9cde20800000000000000
+      internalID: 3376743329189832936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_69
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 0
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c80aba5369fcb890800000000000000
+      internalID: -7440798279203682106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_70
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 0
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22ded204adc2443d0800000000000000
+      internalID: -3223402117399188190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX FX Caudron Smoke_71
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 0
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77f6a14c5981a6d00800000000000000
+      internalID: 966612101543653239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TX FX Caudron Smoke_0: -2356135772275001221
+      TX FX Caudron Smoke_1: -7993163672924572064
+      TX FX Caudron Smoke_10: 7098476521393181921
+      TX FX Caudron Smoke_11: 8198066455126198595
+      TX FX Caudron Smoke_12: 5267747994291329862
+      TX FX Caudron Smoke_13: -3221853857155286738
+      TX FX Caudron Smoke_14: -1949327750571893752
+      TX FX Caudron Smoke_15: -7480182052777144056
+      TX FX Caudron Smoke_16: -3515891637952146030
+      TX FX Caudron Smoke_17: 3629052371890149852
+      TX FX Caudron Smoke_18: -4316834838109004853
+      TX FX Caudron Smoke_19: 3269979596248484782
+      TX FX Caudron Smoke_2: 5146320401615102404
+      TX FX Caudron Smoke_20: -1912231367417992337
+      TX FX Caudron Smoke_21: 5067978335327476286
+      TX FX Caudron Smoke_22: -5339328917763374953
+      TX FX Caudron Smoke_23: -7670259432463565460
+      TX FX Caudron Smoke_24: -4965889168668387030
+      TX FX Caudron Smoke_25: 7064546026533871902
+      TX FX Caudron Smoke_26: -877187290676554923
+      TX FX Caudron Smoke_27: 3417728748159399111
+      TX FX Caudron Smoke_28: -6393617625617615703
+      TX FX Caudron Smoke_29: -2462525807959024825
+      TX FX Caudron Smoke_3: 4298275522181664666
+      TX FX Caudron Smoke_30: 7550002380298005419
+      TX FX Caudron Smoke_31: -1202959058048900387
+      TX FX Caudron Smoke_32: -7435358760095388302
+      TX FX Caudron Smoke_33: -6198684203552939423
+      TX FX Caudron Smoke_34: 2169297635412073361
+      TX FX Caudron Smoke_35: 7119359782167540807
+      TX FX Caudron Smoke_36: -1650785838262114450
+      TX FX Caudron Smoke_37: 366704780390761016
+      TX FX Caudron Smoke_38: -5204338530189305869
+      TX FX Caudron Smoke_39: 3894960488759713290
+      TX FX Caudron Smoke_4: -783954143333890963
+      TX FX Caudron Smoke_40: 1862692184633808485
+      TX FX Caudron Smoke_41: -4878266261636682244
+      TX FX Caudron Smoke_42: -7776947983241018991
+      TX FX Caudron Smoke_43: 6953295259747922930
+      TX FX Caudron Smoke_44: 1272993792404835300
+      TX FX Caudron Smoke_45: 7839894276529663048
+      TX FX Caudron Smoke_46: 273876280295543989
+      TX FX Caudron Smoke_47: -3157147640325885242
+      TX FX Caudron Smoke_48: -4323276089183836808
+      TX FX Caudron Smoke_49: 806286370417836423
+      TX FX Caudron Smoke_5: -7362279381019571479
+      TX FX Caudron Smoke_50: -744949871807967298
+      TX FX Caudron Smoke_51: -8664319199824417337
+      TX FX Caudron Smoke_52: -5791428495666407264
+      TX FX Caudron Smoke_53: 5265334751988677463
+      TX FX Caudron Smoke_54: 6805750388727540060
+      TX FX Caudron Smoke_55: -6005082552301001689
+      TX FX Caudron Smoke_56: 3179820265226595892
+      TX FX Caudron Smoke_57: 8917909462122010184
+      TX FX Caudron Smoke_58: 7200716470652206144
+      TX FX Caudron Smoke_59: -6801864433030735338
+      TX FX Caudron Smoke_6: -1674869298654813012
+      TX FX Caudron Smoke_60: -38233783011304182
+      TX FX Caudron Smoke_61: 3150176896833563089
+      TX FX Caudron Smoke_62: -5253064494787437046
+      TX FX Caudron Smoke_63: 8743172247544342608
+      TX FX Caudron Smoke_64: 8490897790003813532
+      TX FX Caudron Smoke_65: 1583461883686789313
+      TX FX Caudron Smoke_66: 190370414103052095
+      TX FX Caudron Smoke_67: 7299052820787559938
+      TX FX Caudron Smoke_68: 3376743329189832936
+      TX FX Caudron Smoke_69: -7440798279203682106
+      TX FX Caudron Smoke_7: 5882973797804251139
+      TX FX Caudron Smoke_70: -3223402117399188190
+      TX FX Caudron Smoke_71: 966612101543653239
+      TX FX Caudron Smoke_8: 6789413804929530641
+      TX FX Caudron Smoke_9: -6638552906215090109
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

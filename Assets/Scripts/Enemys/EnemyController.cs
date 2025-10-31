@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    [Header ("Config")]
     [SerializeField]
     private float life;
     [SerializeField]
@@ -11,6 +12,7 @@ public class EnemyController : MonoBehaviour
     private bool playerDetected;
     public bool attacking;
     public float stopDistance;
+    private bool isDeath;
 
     public Transform player;
 
@@ -31,6 +33,11 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        if (isDeath == true)
+        {
+            rb.linearVelocity = Vector3.zero;
+            return;
+        }
         if (playerDetected == true && attacking == false)
         {
             Vector3 distance = player.transform.position - transform.position;
@@ -67,9 +74,36 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerController>().TakeDmg(dmg);
+        }
+    }
+
     private void StartMoving()
     {
         playerDetected = true;
         animator.SetBool("PlayerDetect", true);
+    }
+
+    public void TakeDmg(float _dmg)
+    {
+        life -= _dmg;
+        if (life <= 0)
+        {
+            //Muerte fer que es quedi el cos 
+            animator.SetTrigger("Death");
+            rb.gravityScale = 0;
+            GetComponent<Collider2D>().enabled = false;
+            isDeath = true;
+        }
+        else
+        {
+            //hit
+            animator.SetTrigger("Hit");
+
+        }
     }
 }
