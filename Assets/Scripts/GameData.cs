@@ -18,6 +18,8 @@ public class GameData
     private float fireballDmg;
     [SerializeField]
     private float heavyDmg;
+    [SerializeField]
+    private int sceneSave;
 
     public float PlayerLIFE
     {
@@ -60,5 +62,9 @@ public class GameData
         set { heavyDmg = value; }
     }
 
-   
+   public int SceneSave
+    {
+        get { return sceneSave; }
+        set { sceneSave = value; }
+    }
 }

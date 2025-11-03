@@ -7,12 +7,17 @@ public class LevelManager : MonoBehaviour
     private Image lifeBar;
     [SerializeField]
     private Image manaBar;
+    [SerializeField]
+    private Transform[] doorsPoints;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        GameObject.FindGameObjectWithTag("Player").transform.position = 
+            doorsPoints[GameManager.instance.doorToGo].position;
+        GameObject.FindGameObjectWithTag("Player").transform.rotation =
+            doorsPoints[GameManager.instance.doorToGo].rotation;
     }
 
     // Update is called once per frame

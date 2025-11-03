@@ -5,6 +5,9 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     [SerializeField]
     private GameData gameData;
+    public int slot;
+
+    public int doorToGo;
 
     private void Awake()
     {
@@ -35,5 +38,21 @@ public class GameManager : MonoBehaviour
     {
         get { return gameData; }
         set { gameData = value; }
+    }
+
+
+    public void SaveGame()
+    {
+        string data = JsonUtility.ToJson(gameData);
+        PlayerPrefs.SetString("data" + slot.ToString(), data);
+    }
+
+    public void LoadGame()
+    {
+        if( PlayerPrefs.HasKey("data"+ slot.ToString()) == true)
+        {
+            string data = PlayerPrefs.GetString("data" + slot.ToString());
+            gameData =JsonUtility.FromJson<GameData>(data);
+        }
     }
 }
