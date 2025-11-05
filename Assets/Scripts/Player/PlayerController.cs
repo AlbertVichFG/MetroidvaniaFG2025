@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
 
     //Temporal
-    private int maxJumps = 1;
+
 
 
     
@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
                 transform.eulerAngles = Vector3.zero;
             }
 
-            if (Input.GetButtonDown("Jump") && JumpCount < maxJumps)
+            if (Input.GetButtonDown("Jump") && JumpCount < GameManager.instance.GetGameData.MaxJumps)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
                 JumpCount++;

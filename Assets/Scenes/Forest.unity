@@ -187,6 +187,9 @@ MonoBehaviour:
     playerDmg: 3
     fireballDmg: 10
     heavyDmg: 100
+    sceneSave: 0
+  slot: 0
+  comeFromLoadGame: 0
   doorToGo: 0
 --- !u!4 &185888035
 Transform:

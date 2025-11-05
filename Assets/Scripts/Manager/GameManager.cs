@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameData gameData;
     public int slot;
+    public bool comeFromLoadGame; 
 
     public int doorToGo;
 
@@ -22,16 +23,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        //Nomes per test, BORRAR DESPRES!
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            PlayerPrefs.DeleteAll();
+        }
     }
 
     public GameData GetGameData

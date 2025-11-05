@@ -30,6 +30,7 @@ public class MainMenuManager : MonoBehaviour
         {
             GameManager.instance.slot = _slot;
             GameManager.instance.LoadGame();
+            GameManager.instance.comeFromLoadGame = true;
             SceneManager.LoadScene(GameManager.instance.GetGameData.SceneSave);
         }
         else
@@ -43,6 +44,7 @@ public class MainMenuManager : MonoBehaviour
             GameManager.instance.GetGameData.PlayerDmg = 25;
             GameManager.instance.GetGameData.FireballDmg = 15;
             GameManager.instance.GetGameData.HeavyDmg = 35;
+            GameManager.instance.GetGameData.MaxJumps = 1;
             SceneManager.LoadScene(1);
         }
     }

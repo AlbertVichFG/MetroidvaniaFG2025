@@ -39,6 +39,7 @@ public class SafeStone : MonoBehaviour
                 GameManager.instance.GetGameData.SceneSave = SceneManager.GetActiveScene().buildIndex;
                 //Guardar partida
                 GameManager.instance.SaveGame();
+                safeIcon.SetActive(false);
                 inSafeZone = false;
                 //Efecto de particluas si vols maco
             }
