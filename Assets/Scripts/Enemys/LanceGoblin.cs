@@ -20,6 +20,7 @@ public class LanceGoblin : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            //Treure DMG
             Debug.Log("I Hit the player");
         }
         Destroy(gameObject);

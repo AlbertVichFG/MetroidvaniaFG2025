@@ -2217,7 +2217,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 19
+      scalar: 0.97
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -2852,7 +2852,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 0.33
       mode: 0
       spread: 0
       speed:
@@ -7051,6 +7051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChestScript
   iconUI: {fileID: 1308180783}
+  particl: {fileID: 1083026878}
   gemmName: DobleJump
 --- !u!61 &1276398271
 BoxCollider2D:
@@ -7964,6 +7965,10 @@ PrefabInstance:
     - target: {fileID: 4499444454979095380, guid: c17274c50a323fd4a9b48371ea387e3b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5185252960355856473, guid: c17274c50a323fd4a9b48371ea387e3b, type: 3}
+      propertyPath: m_GravityScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7314166235015144886, guid: c17274c50a323fd4a9b48371ea387e3b, type: 3}
       propertyPath: m_Name

@@ -6,6 +6,9 @@ public class ChestScript : MonoBehaviour
     [SerializeField]
     private GameObject iconUI;
     private Animator animator;
+
+    [SerializeField]
+    private ParticleSystem particl;
     [SerializeField]
     private string gemmName;
 
@@ -106,5 +109,10 @@ public class ChestScript : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(false);
         GetComponent<Collider2D>().enabled = false;
         
+    }
+
+    public void ActivateParticles()
+    {
+        particl.Play();
     }
 }
