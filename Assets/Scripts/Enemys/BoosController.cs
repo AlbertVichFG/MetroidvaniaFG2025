@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BoosController : MonoBehaviour
 {
-    public enum BossStates { Waiting, Jumping, Roar, Roll, Spikes, Tired, Death}
+    public enum BossStates { Waiting, Jumping, Roar, Roll, Spikes, Death}
 
     [Header("GeneralConfig")]
     [SerializeField]
@@ -40,6 +40,18 @@ public class BoosController : MonoBehaviour
     [SerializeField]
     private float rollSpeed;
     private bool collisioned;
+    private ContactPoint2D[] puntosContatcto;
+
+    [Header("Spikes")]
+    [SerializeField]
+    private GameObject spikesPrefab;
+    [SerializeField]
+    private Transform[] spikesSpawnPoints;
+    [SerializeField]
+    private float timeToSpike;
+    [SerializeField]
+    private float timeToTired;
+
 
 
 
@@ -49,10 +61,10 @@ public class BoosController : MonoBehaviour
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
 
-        //Test Only!
-        currentState = BossStates.Roar;
+        //*Test Only!
+        currentState = BossStates.Spikes;
         ChangeState();
-        ///////
+        //*///////
     }
 
     // Update is called once per frame
@@ -80,10 +92,7 @@ public class BoosController : MonoBehaviour
                 StartCoroutine(RollCoroutine());
                 break;
             case BossStates.Spikes:
-
-                break;
-            case BossStates.Tired:
-
+                StartCoroutine(SpikesCoroutine());
                 break;
             case BossStates.Death:
 
@@ -98,6 +107,7 @@ public class BoosController : MonoBehaviour
     {
         yield return new WaitForSeconds(waitingTime);
         currentState = (BossStates)Random.Range(1, 5);
+        ChangeState();
     }
 
 
@@ -153,6 +163,7 @@ public class BoosController : MonoBehaviour
         animator.SetBool("IsRolling", true);
         collisioned = false;
         yield return new WaitForSeconds(timeToRoll);
+        //canviar collider
         CapsuleCollider2D collider = GetComponent<CapsuleCollider2D>();
         float standerColliderX = collider.size.x;
         collider.size = new Vector2(colliderSizeX, collider.size.y);
@@ -162,5 +173,58 @@ public class BoosController : MonoBehaviour
             transform.Translate(Vector3.left * rollSpeed * Time.deltaTime, Space.Self);
             yield return null;
         } 
+        animator.SetBool("IsRolling", false) ;
+        //Aixo
+        //collisioned = false;
+        collider.size = new Vector2 (standerColliderX, collider.size.y) ;
+        yield return new WaitForSeconds(timeToRoll);
+        currentState = BossStates.Waiting;
+        ChangeState();
+    }
+
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+
+        puntosContatcto = collision.contacts;
+        //Debug.Log(collision.GetContact(puntosContatcto.Length - 1).normal);
+        
+        if (collision.GetContact(puntosContatcto.Length-1).normal.y > -0.6f && collision.GetContact(puntosContatcto.Length - 1).normal.y < 0.6f)
+        {
+            if (collision.GetContact(puntosContatcto.Length - 1).normal.x > 0.5f || collision.GetContact(puntosContatcto.Length - 1).normal.x < -0.5f)
+            {
+                collisioned = true;
+                //Debug.Log("Funciona!");
+            }
+        }
+    }
+
+    IEnumerator SpikesCoroutine()
+    {
+        animator.SetBool("IsSpiking", true);
+        //canviar collider
+        yield return new WaitForSeconds(timeToTired);
+        CapsuleCollider2D collider = GetComponent<CapsuleCollider2D>();
+        float standerColliderX = collider.size.x;
+        collider.size = new Vector2(colliderSizeX, collider.size.y);
+        yield return new WaitForSeconds(timeToSpike);
+        //per si vols fer algo aqui!
+        yield return new WaitForSeconds(timeToTired);
+
+
+        animator.SetBool("IsSpiking", false);
+        //tornar collider normal i state waiting
+        collider.size = new Vector2(standerColliderX, collider.size.y);
+        currentState = BossStates.Waiting;
+        ChangeState();
+
+    }
+
+    public void ShootSpikes()
+    {
+        for (int i = 0; i < spikesSpawnPoints.Length; i++)
+        {
+            Instantiate(spikesPrefab, spikesSpawnPoints[i].position, spikesSpawnPoints[i].rotation);
+        }
     }
 }
