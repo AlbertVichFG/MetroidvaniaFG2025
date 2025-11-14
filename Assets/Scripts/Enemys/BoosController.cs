@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BoosController : MonoBehaviour
@@ -10,14 +11,19 @@ public class BoosController : MonoBehaviour
     private BossStates currentState;
     private Transform playerPos;
     private Animator animator;
-
+    [SerializeField]
+    private float bossLife;
+    [SerializeField]
+    private float dmg;
+    [SerializeField]
+    private float knockBackforce;
 
     [SerializeField]
     private float waitingTime;
 
     [Header("Jump")]
     [SerializeField]
-    private float maxJump = 17f;
+    private float maxJump = 13f;
     [SerializeField]
     private float jumpSpeed;
     [SerializeField]
@@ -61,10 +67,11 @@ public class BoosController : MonoBehaviour
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
 
-        //*Test Only!
+        /*Test Only!
         currentState = BossStates.Spikes;
+        *///////
         ChangeState();
-        //*///////
+        
     }
 
     // Update is called once per frame
@@ -105,7 +112,25 @@ public class BoosController : MonoBehaviour
 
     IEnumerator WaitingCoroutine()
     {
+        //Girar boss
+        if(transform.position.x < playerPos.position.x)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+        else
+        {
+            transform.eulerAngles = Vector3.zero;
+        }
         yield return new WaitForSeconds(waitingTime);
+        if (transform.position.x < playerPos.position.x)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+        else
+        {
+            transform.eulerAngles = Vector3.zero;
+        }
+
         currentState = (BossStates)Random.Range(1, 5);
         ChangeState();
     }
@@ -199,11 +224,50 @@ public class BoosController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            //Això si vull posar diferent dmg per l'estat tambe es pot fer amb un switch
+            //if (currentState == BossStates.Waiting)
+            collision.gameObject.GetComponent<PlayerController>().TakeDmg(dmg);
+            ContactPoint2D point = collision.GetContact(0);
+            if (transform.position.x < playerPos.position.x) //dereta
+            {
+                collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.right * knockBackforce);
+            }
+            else
+            {
+                collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.left * knockBackforce);
+            }
+
+            StartCoroutine(collision.gameObject.GetComponent<PlayerController>().KnockBackCoroutine());
+
+            /*if (point.normal.y < 0)
+            {
+                if(point.normal.x > 0)//dreta
+                {
+                    collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.right * knockBackforce);
+                    StartCoroutine(collision.gameObject.GetComponent<PlayerController>().KnockBackCoroutine());
+                }
+                else //esquerra
+                {
+                    collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.left * knockBackforce);
+                    StartCoroutine(collision.gameObject.GetComponent<PlayerController>().KnockBackCoroutine());
+                                    }
+            }
+            else
+            {
+                collision.gameObject.GetComponent<Rigidbody2D>().AddForce(point.normal * knockBackforce);
+                StartCoroutine(collision.gameObject.GetComponent<PlayerController>().KnockBackCoroutine());
+            }*/
+        }
+        }
+
     IEnumerator SpikesCoroutine()
     {
         animator.SetBool("IsSpiking", true);
         //canviar collider
-        yield return new WaitForSeconds(timeToTired);
         CapsuleCollider2D collider = GetComponent<CapsuleCollider2D>();
         float standerColliderX = collider.size.x;
         collider.size = new Vector2(colliderSizeX, collider.size.y);
@@ -225,6 +289,20 @@ public class BoosController : MonoBehaviour
         for (int i = 0; i < spikesSpawnPoints.Length; i++)
         {
             Instantiate(spikesPrefab, spikesSpawnPoints[i].position, spikesSpawnPoints[i].rotation);
+        }
+    }
+
+    public void TakeDmg( float _dmg)
+    {
+        bossLife -= _dmg;
+        if (bossLife <= 0)
+        {
+            //Muerto
+            animator.SetTrigger("IsDeath"); 
+            StopAllCoroutines();
+            GetComponent<CapsuleCollider2D>().enabled = false;
+            GetComponent<Rigidbody2D>().gravityScale = 0;
+            this.enabled = false;
         }
     }
 }

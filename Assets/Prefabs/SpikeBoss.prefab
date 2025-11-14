@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpikesController
   speed: 750
+  dmg: 5
 --- !u!50 &3106474299849240917
 Rigidbody2D:
   serializedVersion: 5
@@ -128,7 +129,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 320
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0

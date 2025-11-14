@@ -5,6 +5,8 @@ public class SpikesController : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField]
     private float speed;
+    [SerializeField]
+    private float dmg;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,9 +27,10 @@ public class SpikesController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if( collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("DMG 2 Player");
+            collision.gameObject.GetComponent<PlayerController>().TakeDmg(dmg);
+     
         }
 
       Destroy(gameObject);

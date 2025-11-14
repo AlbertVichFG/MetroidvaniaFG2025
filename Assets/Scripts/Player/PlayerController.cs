@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -23,10 +24,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float coldDown;
     private float timePasFireBall;
-
     [SerializeField]
     private float costFireBall;
-    
+    public bool knockBack;
+    [SerializeField]
+    private float knockBackTime;
+
+
 
     private LevelManager levelManager;
 
@@ -50,6 +54,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (knockBack == true)
+        {
+            return;
+        }
         //Moviment
         if (comboCount == 0)
         {
@@ -190,11 +198,24 @@ public class PlayerController : MonoBehaviour
             int comboAnimator = animator.GetInteger("Comboo");
             if (comboAnimator > 0)
             {
-                collision.gameObject.GetComponent<EnemyController>().TakeDmg(GameManager.instance.GetGameData.PlayerDmg);
+                try
+                {
+                    collision.gameObject.GetComponent<EnemyController>().TakeDmg(GameManager.instance.GetGameData.PlayerDmg);
+                }
+                catch {
+                    collision.gameObject.GetComponent<BoosController>().TakeDmg(GameManager.instance.GetGameData.PlayerDmg);
+                }
             }
             else
             {
-                collision.gameObject.GetComponent<EnemyController>().TakeDmg(GameManager.instance.GetGameData.HeavyDmg);
+                try
+                {
+                    collision.gameObject.GetComponent<EnemyController>().TakeDmg(GameManager.instance.GetGameData.HeavyDmg);
+                }
+                catch
+                {
+                    collision.gameObject.GetComponent<BoosController>().TakeDmg(GameManager.instance.GetGameData.HeavyDmg);
+                }
             }
         }
     }
@@ -215,5 +236,12 @@ public class PlayerController : MonoBehaviour
             //gethit
             animator.SetTrigger("Hit");
         }
+    }
+
+    public IEnumerator KnockBackCoroutine()
+    {
+        knockBack = true;
+        yield return new WaitForSeconds(knockBackTime);
+        knockBack = false;
     }
 }
