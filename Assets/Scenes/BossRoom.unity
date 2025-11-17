@@ -369,6 +369,7 @@ MonoBehaviour:
     heavyDmg: 100
     sceneSave: 0
     maxJumps: 0
+    boss1: 0
   slot: 0
   comeFromLoadGame: 0
   doorToGo: 0
@@ -2979,9 +2980,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoosController
   currentState: 0
-  bossLife: 10
+  bossLife: 0
   dmg: 10
   knockBackforce: 500
+  dieSprite: {fileID: -707417940709540435, guid: 28f2d9836a1d6d74c9fd5c2c08808641, type: 3}
   waitingTime: 1
   maxJump: 17
   jumpSpeed: 0.25
@@ -27485,6 +27487,7 @@ GameObject:
   - component: {fileID: 1555326871}
   - component: {fileID: 1555326870}
   - component: {fileID: 1555326869}
+  - component: {fileID: 1555326873}
   m_Layer: 0
   m_Name: Door (1)
   m_TagString: Untagged
@@ -27633,6 +27636,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1555326873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555326868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a827aa027ee87b4f8805658ca3e5add, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossDoor
 --- !u!1 &1579628497
 GameObject:
   m_ObjectHideFlags: 0

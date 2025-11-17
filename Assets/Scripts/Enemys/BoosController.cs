@@ -17,6 +17,8 @@ public class BoosController : MonoBehaviour
     private float dmg;
     [SerializeField]
     private float knockBackforce;
+    [SerializeField]
+    private Sprite dieSprite;
 
     [SerializeField]
     private float waitingTime;
@@ -64,14 +66,28 @@ public class BoosController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
+
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
 
         /*Test Only!
         currentState = BossStates.Spikes;
         *///////
-        ChangeState();
+        //ChangeState();
         
+    }
+
+    public void SetDeathAtStart()
+    {
+        //Cridem l'animator un altre cop xk el boss ja esta mort i no s'activa el start
+        animator= GetComponent<Animator>();
+        animator.enabled = false;
+        GetComponent<SpriteRenderer>().sprite = dieSprite;
+        GetComponent<CapsuleCollider2D>().enabled = false;
+        GetComponent<Rigidbody2D>().gravityScale = 0;
+        this.enabled = false;
+
     }
 
     // Update is called once per frame
@@ -303,6 +319,11 @@ public class BoosController : MonoBehaviour
             GetComponent<CapsuleCollider2D>().enabled = false;
             GetComponent<Rigidbody2D>().gravityScale = 0;
             this.enabled = false;
+            GameManager.instance.GetGameData.Boss1 = true;
+        }
+        else
+        {
+
         }
     }
 }

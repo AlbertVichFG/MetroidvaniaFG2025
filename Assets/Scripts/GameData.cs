@@ -22,6 +22,8 @@ public class GameData
     private int sceneSave;
     [SerializeField]
     private int maxJumps;
+    [SerializeField]
+    private bool boss1;
 
     public float PlayerLIFE
     {
@@ -74,5 +76,11 @@ public class GameData
     {
         get { return maxJumps; }
         set { maxJumps = value; }
+    }
+
+    public bool Boss1
+    {
+        get { return boss1; }
+        set { boss1 = value; }
     }
 }

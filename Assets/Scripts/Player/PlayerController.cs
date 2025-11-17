@@ -235,6 +235,8 @@ public class PlayerController : MonoBehaviour
         {
             //gethit
             animator.SetTrigger("Hit");
+            comboCount = 0;
+
         }
     }
 
