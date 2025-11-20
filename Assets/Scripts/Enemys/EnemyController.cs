@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour
     private bool playerDetected;
     public bool attacking;
     public float stopDistance;
-    private bool isDeath;
+    public bool isDeath;
 
     public Transform player;
 
@@ -68,6 +68,7 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.gameObject.tag =="Player")
         {
+            Debug.Log("Aixo tambe funciona??");
             animator.SetTrigger("Alert");
             Invoke("StartMoving", animator.GetCurrentAnimatorStateInfo(0).length);
             player = collision.transform;

@@ -202,7 +202,8 @@ public class PlayerController : MonoBehaviour
                 {
                     collision.gameObject.GetComponent<EnemyController>().TakeDmg(GameManager.instance.GetGameData.PlayerDmg);
                 }
-                catch {
+                catch 
+                {
                     collision.gameObject.GetComponent<BoosController>().TakeDmg(GameManager.instance.GetGameData.PlayerDmg);
                 }
             }

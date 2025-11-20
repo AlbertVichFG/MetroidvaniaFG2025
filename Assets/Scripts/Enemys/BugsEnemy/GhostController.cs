@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class GhostController : EnemyController
@@ -8,14 +9,17 @@ public class GhostController : EnemyController
     private GameObject purpleShoot;
     [SerializeField]
     private Transform spwanPoint;
-    [SerializeField]
-    private float shotDelay = 0.3f;
+    
 
-    [Header("Vertical Movement")]
+    [Header("Shoot")]
     [SerializeField]
-    private float upDistance = 3f;
+    private float bullet;
     [SerializeField]
-    private float moveDuration = 1f;
+    private float shotDelay;
+    [SerializeField]
+    private float shootReset;
+    [SerializeField]
+    private bool shooting;
 
     [Header("Horizontal Movment")]
     [SerializeField]
@@ -34,61 +38,74 @@ public class GhostController : EnemyController
 
     void Update()
     {
-            MoveHorizontal();
-    }
-
-
-    private void MoveHorizontal()
-    {
-        // Moviment lateral 
-        float offset = Mathf.Sin(Time.time * desplaSpeed) * desplaDistance;
-        transform.position = new Vector3(startPos.x + offset, transform.position.y, transform.position.z);
-    }
-
-
-    IEnumerator ShootMoveSequence()
-    {
-        Debug.Log("EntraAqui");
-
-        animator.SetBool("IsAttacking", true);
-
-        Vector3 originalPos = transform.position;
-        Vector3 topPos = originalPos + Vector3.up * upDistance;
-
-        //Pujar
-       yield return StartCoroutine(MoveSmooth(originalPos, topPos, moveDuration));
-
-        //Disparar 3 boles de foc
-        for (int i = 0; i < 3; i++)
+        if (isDeath == true)
         {
-            Debug.Log("ATAKA MOSTRE DEL ULL");
-            Shoot();
-            yield return new WaitForSeconds(shotDelay);
+            Debug.Log("Destrueix?");
+            Destroy(gameObject);
+        }else
+        {
+            MoveInfinit();
         }
 
-        //Baixar
-        yield return StartCoroutine(MoveSmooth(topPos, originalPos, moveDuration));
 
-        animator.SetBool("IsAttacking", false);
+        if (attacking == true) {
+            if (shooting == false)
+            {
+
+                StartCoroutine(ShootPurple());
+            }
+        }
+
+    }
+
+
+    private void MoveInfinit()
+    {
+        // Moviment lateral
+        float t = Time.time * desplaSpeed;
+
+        // Infinit 
+        float offsetX = Mathf.Sin(t) * desplaDistance;
+        float offsetY = Mathf.Sin(t * 2f) * (desplaDistance / 2f);
+
+        transform.position = new Vector3(
+            startPos.x + offsetX, startPos.y + offsetY, transform.position.z);
+    }
+
+
+    IEnumerator ShootPurple()
+    {
+        shooting = true;
+
+        while (bullet < 3)
+        {
+            
+            Debug.Log("Bullet: " + bullet);
+            Instantiate(purpleShoot, spwanPoint.position, spwanPoint.rotation * Quaternion.Euler(0, 180, 0));
+            bullet++;
+            yield return new WaitForSeconds(shotDelay);
+
+        }
 
         attacking = false;
+
+        // Reinici
+        bullet = 0;
+        yield return new WaitForSeconds(shootReset);
+        shooting = false;
+
+
     }
 
-    void Shoot()
-    {
-        Instantiate(purpleShoot, spwanPoint.position, spwanPoint.rotation);
-    }
 
-   IEnumerator MoveSmooth(Vector3 from, Vector3 to, float duration)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        float t = 0f;
-        while (t < duration)
+        if( collision.gameObject.tag == "Player")
         {
-            transform.position = Vector3.Lerp(from, to, t / duration);
-            t += Time.deltaTime;
-            yield return null;
+            Debug.Log("DETECTO EL PLAYER");
+            attacking = true;
         }
-        transform.position = to;
     }
 
 
