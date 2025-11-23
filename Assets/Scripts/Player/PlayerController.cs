@@ -6,17 +6,17 @@ public class PlayerController : MonoBehaviour
     [Header("Config")]
     [SerializeField]
     private float speed;
-    private Rigidbody2D rb;
-    private Animator animator;
-    private int JumpCount;
-    private int comboCount;
     [SerializeField]
     private float jumpForce;
     [SerializeField]
     private float groundDistance;
-    
+    [SerializeField]
+    private bool isGrounded;
+    private int JumpCount;
+    private int comboCount;
 
-    [Header ("FireBall")]
+
+    [Header("FireBall")]
     [SerializeField]
     private GameObject fireballPrefab;
     [SerializeField]
@@ -26,12 +26,29 @@ public class PlayerController : MonoBehaviour
     private float timePasFireBall;
     [SerializeField]
     private float costFireBall;
+
+    [Header("Knockback")]
     public bool knockBack;
     [SerializeField]
     private float knockBackTime;
 
+    [Header("Dash")]
+    [SerializeField]
+    private float dashForce = 20f;
+    [SerializeField]
+    private float dashDuration = 0.12f;
+    [SerializeField]
+    private float dashCooldown = 0.8f;
+
+    private bool isDashing;
+    private float dashTimer;
+    private float dashCoolTimer;
+    private bool usedDashThisAir;
 
 
+
+    private Animator animator;
+    private Rigidbody2D rb;
     private LevelManager levelManager;
 
 
@@ -39,7 +56,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-    
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -54,10 +71,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (knockBack == true)
-        {
-            return;
-        }
+        if (knockBack == true) return;
+
+
         //Moviment
         if (comboCount == 0)
         {
@@ -110,7 +126,7 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
         }
 
-        
+
         //Atack
 
         if (JumpCount == 0)
@@ -130,8 +146,25 @@ public class PlayerController : MonoBehaviour
 
         timePasFireBall += Time.deltaTime;
 
-        
-        
+
+        //Dash
+
+        if (Input.GetButtonDown("Dash") && dashCoolTimer <= 0)
+        {
+            if (isGrounded)
+            {
+                StartDash();
+                usedDashThisAir = false;   //assegura dash infinit al terra
+            }
+            else if (!usedDashThisAir)
+            {
+                StartDash();
+                usedDashThisAir = true;    // només gastem dash a l’aire
+            }
+        }
+
+        HandleDash();
+
     }
 
     //Atacs personatge + animacio
@@ -157,9 +190,11 @@ public class PlayerController : MonoBehaviour
 
     void CheckJump()
     {
+
         //TocarTerra
-        Collider2D[] coliders = Physics2D.OverlapCircleAll(transform.position,  groundDistance);
-        bool isGrounded = false;
+        Collider2D[] coliders = Physics2D.OverlapCircleAll(transform.position, groundDistance);
+
+        isGrounded = false;
 
         for (int i = 0; i < coliders.Length; i++)
         {
@@ -175,7 +210,7 @@ public class PlayerController : MonoBehaviour
             JumpCount = 0;
             animator.SetBool("IsJumping", false);
 
-
+            usedDashThisAir = false;
         }
         else
         {
@@ -202,7 +237,7 @@ public class PlayerController : MonoBehaviour
                 {
                     collision.gameObject.GetComponent<EnemyController>().TakeDmg(GameManager.instance.GetGameData.PlayerDmg);
                 }
-                catch 
+                catch
                 {
                     collision.gameObject.GetComponent<BoosController>().TakeDmg(GameManager.instance.GetGameData.PlayerDmg);
                 }
@@ -247,4 +282,48 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(knockBackTime);
         knockBack = false;
     }
+
+    //Dashhh
+
+    private bool IsGrounded()
+    {
+        return isGrounded;
+    }
+
+    private void StartDash()
+    {
+        isDashing = true;
+        dashTimer = dashDuration;
+        dashCoolTimer = dashCooldown;
+
+        //  animator.SetTrigger("Dash");
+
+        comboCount = 0;
+        animator.SetInteger("Comboo", 0);
+
+    }
+
+    private void HandleDash()
+    {
+        if (isDashing)
+        {
+            dashTimer -= Time.deltaTime;
+            float dir = transform.eulerAngles.y == 0 ? 1f : -1f;
+
+            // Manté Y per gravetat
+            rb.linearVelocity = new Vector2(dir * dashForce, rb.linearVelocity.y);
+
+            if (dashTimer <= 0f)
+            {
+                isDashing = false;
+            }
+        }
+
+        // Cooldown
+        if (dashCoolTimer > 0f) dashCoolTimer -= Time.deltaTime;
+    }
+
+
 }
+
+
