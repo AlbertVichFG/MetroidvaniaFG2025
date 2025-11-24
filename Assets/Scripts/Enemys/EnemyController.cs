@@ -40,25 +40,24 @@ public class EnemyController : MonoBehaviour
         }
         if (playerDetected == true && attacking == false)
         {
-            Vector3 distance = player.transform.position - transform.position;
-            if (distance.x > 0) //Dreta
+            Vector3 distance = player.position - transform.position;
+
+            if (distance.x > 0) // dreta
             {
-                rb.linearVelocity = speed * Vector2.right;
+                rb.linearVelocity = new Vector2(speed, rb.linearVelocity.y);
                 transform.eulerAngles = new Vector3(0, 180, 0);
             }
-            else if(distance.x < 0) //Esquerra
+            else if (distance.x < 0) // esquerra
             {
-                rb.linearVelocity = speed * Vector2.left;
+                rb.linearVelocity = new Vector2(-speed, rb.linearVelocity.y);
                 transform.eulerAngles = Vector3.zero;
             }
 
-            //Calcular quan enemic esta a prop del jugador per atacar
-            Vector3 distanceStop = player.position - transform.position;
-            float distanceSQR = distanceStop.sqrMagnitude;
-            if (distanceSQR <= Mathf.Pow(stopDistance, 2))
+            // distància per atacar
+            if ((player.position - transform.position).sqrMagnitude <= stopDistance * stopDistance)
             {
                 attacking = true;
-                rb.linearVelocity = Vector2.zero;
+                rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
             }
         }
         
@@ -106,5 +105,10 @@ public class EnemyController : MonoBehaviour
             animator.SetTrigger("Hit");
 
         }
+    }
+
+    public void DestroyEnemy()
+    {
+        Destroy(gameObject);
     }
 }

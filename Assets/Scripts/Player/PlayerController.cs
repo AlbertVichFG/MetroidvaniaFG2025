@@ -154,6 +154,7 @@ public class PlayerController : MonoBehaviour
             if (isGrounded)
             {
                 StartDash();
+
                 usedDashThisAir = false;   //assegura dash infinit al terra
             }
             else if (!usedDashThisAir)
@@ -164,6 +165,19 @@ public class PlayerController : MonoBehaviour
         }
 
         HandleDash();
+
+
+
+        //Crouch
+
+       if (Input.GetButtonDown("Crouch"))
+        {
+            animator.SetBool("IsCrouch", true);
+        }else if (Input.GetButtonUp("Crouch"))
+        {
+            animator.SetBool("IsCrouch", false);
+
+        }
 
     }
 
@@ -285,18 +299,14 @@ public class PlayerController : MonoBehaviour
 
     //Dashhh
 
-    private bool IsGrounded()
-    {
-        return isGrounded;
-    }
 
     private void StartDash()
     {
+        animator.SetTrigger("Dash");
         isDashing = true;
         dashTimer = dashDuration;
         dashCoolTimer = dashCooldown;
 
-        //  animator.SetTrigger("Dash");
 
         comboCount = 0;
         animator.SetInteger("Comboo", 0);
@@ -311,7 +321,10 @@ public class PlayerController : MonoBehaviour
             float dir = transform.eulerAngles.y == 0 ? 1f : -1f;
 
             // Manté Y per gravetat
-            rb.linearVelocity = new Vector2(dir * dashForce, rb.linearVelocity.y);
+
+            //rb.linearVelocity = new Vector2(dir * dashForce, rb.linearVelocity.y);
+            rb.AddForce(new Vector2(dir * dashForce, 0f), ForceMode2D.Impulse);
+
 
             if (dashTimer <= 0f)
             {

@@ -38,4 +38,6 @@ public class GoblinLanceController : EnemyController
         Instantiate(lancePrefab, spwanPosLance.position, spwanPosLance.rotation);
 
     }
+
+
 }

@@ -40,8 +40,7 @@ public class GhostController : EnemyController
     {
         if (isDeath == true)
         {
-            Debug.Log("Destrueix?");
-            Destroy(gameObject);
+            return;
         }else
         {
             MoveInfinit();
@@ -80,7 +79,7 @@ public class GhostController : EnemyController
         while (bullet < 3)
         {
             
-            Debug.Log("Bullet: " + bullet);
+            // Debug.Log("Bullet: " + bullet);
             Instantiate(purpleShoot, spwanPoint.position, spwanPoint.rotation * Quaternion.Euler(0, 180, 0));
             bullet++;
             yield return new WaitForSeconds(shotDelay);
@@ -90,23 +89,34 @@ public class GhostController : EnemyController
         attacking = false;
 
         // Reinici
+        Debug.Log("Reload");
         bullet = 0;
         yield return new WaitForSeconds(shootReset);
         shooting = false;
-
+        Debug.Log(bullet + "Bales");
 
     }
 
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+   /* private void OnTriggerEnter2D(Collider2D collision)
     {
         if( collision.gameObject.tag == "Player")
         {
             Debug.Log("DETECTO EL PLAYER");
             attacking = true;
         }
-    }
+    }*/
 
+
+    //Stay aixi attacking es mante true i pot tornar a disparar
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("DETECTO EL PLAYER");
+            attacking = true;
+        }
+    }
 
 }
