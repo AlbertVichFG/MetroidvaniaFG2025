@@ -33,6 +33,10 @@ public class ChestScript : MonoBehaviour
 
 
                 break;
+            case "Crouch":
+
+
+                break;
 
             default:
 
@@ -98,6 +102,11 @@ public class ChestScript : MonoBehaviour
 
 
                 break ;
+
+            case "Crouch":
+
+
+                break;
 
             default:
 

@@ -67,7 +67,6 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.gameObject.tag =="Player")
         {
-            Debug.Log("Aixo tambe funciona??");
             animator.SetTrigger("Alert");
             Invoke("StartMoving", animator.GetCurrentAnimatorStateInfo(0).length);
             player = collision.transform;
@@ -111,4 +110,15 @@ public class EnemyController : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            playerDetected = false;
+            animator.SetBool("PlayerDetect", false);
+        }
+    }
 }
+

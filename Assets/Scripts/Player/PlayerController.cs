@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     private float groundDistance;
     [SerializeField]
     private bool isGrounded;
+    [SerializeField]
+    private float manaRecovery;
     private int JumpCount;
     private int comboCount;
 
@@ -109,6 +111,8 @@ public class PlayerController : MonoBehaviour
             }
             CheckJump();
 
+            //DispararFireBall
+
             if (Input.GetButtonDown("FireBall"))
             {
                 if (coldDown <= timePasFireBall && GameManager.instance.GetGameData.PlayerMana >= costFireBall)
@@ -149,7 +153,7 @@ public class PlayerController : MonoBehaviour
 
         //Dash
 
-        if (Input.GetButtonDown("Dash") && dashCoolTimer <= 0)
+        if (Input.GetButtonDown("Dash") && dashCoolTimer <= 0 && comboCount == 0)
         {
             if (isGrounded)
             {
@@ -267,6 +271,8 @@ public class PlayerController : MonoBehaviour
                     collision.gameObject.GetComponent<BoosController>().TakeDmg(GameManager.instance.GetGameData.HeavyDmg);
                 }
             }
+
+            RecoveryMana();
         }
     }
 
@@ -335,6 +341,25 @@ public class PlayerController : MonoBehaviour
         // Cooldown
         if (dashCoolTimer > 0f) dashCoolTimer -= Time.deltaTime;
     }
+
+
+    //Recuperar Mana!
+
+    public void RecoveryMana()
+    {
+        if (GameManager.instance.GetGameData.PlayerMana <= GameManager.instance.GetGameData.PlayerMaxMana)
+        {
+            Debug.Log("Suma mana");
+            GameManager.instance.GetGameData.PlayerMana += manaRecovery;
+            if (GameManager.instance.GetGameData.PlayerMana > GameManager.instance.GetGameData.PlayerMaxMana)
+            {
+                Debug.Log("IgualaMana");
+                GameManager.instance.GetGameData.PlayerMana = GameManager.instance.GetGameData.PlayerMaxMana;
+            }
+        }
+        levelManager.UpdateMana();
+    }
+
 
 
 }
