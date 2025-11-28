@@ -112,12 +112,17 @@ public class EnemyController : MonoBehaviour
     }
 
 
-    private void OnTriggerExit2D(Collider2D collision)
+   // Provisional Aturar quan surt (Afegir al animator que vagi al Idle)
+     
+     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             playerDetected = false;
             animator.SetBool("PlayerDetect", false);
+            animator.SetTrigger("Idel");
+            rb.linearVelocity = Vector2.zero;
+            Debug.Log("STOP SURT");
         }
     }
 }
