@@ -11,7 +11,10 @@ public class ChestScript : MonoBehaviour
     private ParticleSystem particl;
     [SerializeField]
     private string gemmName;
-
+    [SerializeField]
+    private Sprite openChestSprite;
+    [SerializeField]
+    private bool chestIsOpen = false;
 
     private void Start()
     {
@@ -26,15 +29,31 @@ public class ChestScript : MonoBehaviour
                 break;
 
             case "Dash":
-
+                if (GameManager.instance.GetGameData.CanDash == true)
+                {
+                    GetComponent<Collider2D>().enabled = false;
+                }
                 break;
 
-            case "ExtraDmg":
-
+            case "FireBall":
+                if (GameManager.instance.GetGameData.HasFireBall == true)
+                {
+                    GetComponent<Collider2D>().enabled = false;
+                }
 
                 break;
             case "Crouch":
+                if (GameManager.instance.GetGameData.CanCrouch == true)
+                {
+                    GetComponent<Collider2D>().enabled = false;
+                }
 
+                break;
+            case "GrabWall":
+                if (GameManager.instance.GetGameData.CanGrabWall == true)
+                {
+                    GetComponent<Collider2D>().enabled = false;
+                }
 
                 break;
 
@@ -61,8 +80,15 @@ public class ChestScript : MonoBehaviour
                 iconUI.SetActive(false);
                 Time.timeScale = 0;
                 SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+                chestIsOpen = true;
             }
         }
+/*
+        if (chestIsOpen == true)
+        {
+            GetComponent<SpriteRenderer>().sprite = openChestSprite; 
+
+        }*/
     }
 
 
@@ -95,19 +121,23 @@ public class ChestScript : MonoBehaviour
                 break;
 
             case "Dash":
-
+                GameManager.instance.GetGameData.CanDash = true;
                 break ;
 
-            case "ExtraDmg":
-
+            case "FireBall":
+                GameManager.instance.GetGameData.HasFireBall = true;
 
                 break ;
 
             case "Crouch":
-
+                GameManager.instance.GetGameData.CanCrouch = true;
 
                 break;
 
+            case "GrabWall":
+                GameManager.instance.GetGameData.CanGrabWall = true;
+
+                break;
             default:
 
                 break;
@@ -123,5 +153,11 @@ public class ChestScript : MonoBehaviour
     public void ActivateParticles()
     {
         particl.Play();
+    }
+
+    public void LetChestOpen()
+    {
+        GetComponent<SpriteRenderer>().sprite = openChestSprite;
+
     }
 }

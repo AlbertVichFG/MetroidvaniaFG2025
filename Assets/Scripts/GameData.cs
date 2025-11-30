@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class GameData 
+public class GameData
 {
     [SerializeField]
     private float playerLife;
@@ -10,7 +10,7 @@ public class GameData
     private float playerMaxLife;
     [SerializeField]
     private float playerMana;
-    [SerializeField] 
+    [SerializeField]
     private float playerMaxMana;
     [SerializeField]
     private float playerDmg;
@@ -23,7 +23,18 @@ public class GameData
     [SerializeField]
     private int maxJumps;
     [SerializeField]
-    private bool boss1;
+    private bool boss1; 
+    [SerializeField]
+    private bool boss2;
+    [SerializeField]
+    private bool canDash;
+    [SerializeField]
+    private bool hasFireBall;
+    [SerializeField]
+    private bool canCrouch;
+    [SerializeField]
+    private bool canGrabWall;
+
 
     public float PlayerLIFE
     {
@@ -39,7 +50,7 @@ public class GameData
 
     public float PlayerMana
     {
-        get { return playerMana; }  
+        get { return playerMana; }
         set { playerMana = value; }
     }
 
@@ -66,11 +77,11 @@ public class GameData
         set { heavyDmg = value; }
     }
 
-   public int SceneSave
-   {
+    public int SceneSave
+    {
         get { return sceneSave; }
         set { sceneSave = value; }
-   }
+    }
 
     public int MaxJumps
     {
@@ -82,5 +93,35 @@ public class GameData
     {
         get { return boss1; }
         set { boss1 = value; }
+    }
+
+    public bool Boss2
+    {
+        get { return boss2; }
+        set { boss2 = value; }
+    }
+
+    public bool CanDash
+    {
+        get { return canDash; }
+        set { canDash = value; }
+    }
+
+    public bool HasFireBall
+    {
+        get { return hasFireBall; }
+        set { hasFireBall = value; }
+    }
+
+    public bool CanCrouch
+    {
+        get { return canCrouch; }
+        set { canCrouch = value; }
+    }
+
+    public bool CanGrabWall
+    {
+        get { return canGrabWall; }
+        set { canGrabWall = value; }
     }
 }

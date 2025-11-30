@@ -5,6 +5,8 @@ public class MainMenuManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject panelSlots;
+    [SerializeField]
+    private GameObject panelCharacterSelect;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -45,6 +47,12 @@ public class MainMenuManager : MonoBehaviour
             GameManager.instance.GetGameData.FireballDmg = 15;
             GameManager.instance.GetGameData.HeavyDmg = 35;
             GameManager.instance.GetGameData.MaxJumps = 1;
+
+            GameManager.instance.GetGameData.CanDash = false;
+            GameManager.instance.GetGameData.HasFireBall = false;
+            GameManager.instance.GetGameData.HasFireBall = false;
+            GameManager.instance.GetGameData.CanCrouch = false;
+            GameManager.instance.GetGameData.CanGrabWall = false;
             SceneManager.LoadScene(1);
         }
     }

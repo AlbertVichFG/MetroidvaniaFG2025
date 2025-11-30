@@ -6,7 +6,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     private float life;
     [SerializeField]
-    private float dmg;
+    protected float dmg;
     [SerializeField]
     private float speed;
     private bool playerDetected;
@@ -17,8 +17,8 @@ public class EnemyController : MonoBehaviour
     public Transform player;
 
    
-
-    private Rigidbody2D rb;
+    //Canvi a protected per poder fer servir en el skull
+    protected Rigidbody2D rb;
     public Animator animator;
 
 

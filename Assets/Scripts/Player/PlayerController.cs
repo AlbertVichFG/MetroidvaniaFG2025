@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     [SerializeField]
     private float manaRecovery;
+    /*[SerializeField]
+    public bool canDash;*/
     private int JumpCount;
     private int comboCount;
 
@@ -48,10 +50,22 @@ public class PlayerController : MonoBehaviour
     private bool usedDashThisAir;
 
 
-
     private Animator animator;
     private Rigidbody2D rb;
     private LevelManager levelManager;
+
+    //NEWWW--------------------------------------
+    [Header("Wall Slide")]
+    [SerializeField] private Transform wallCheck;          // Un empty al lateral del jugador
+    [SerializeField] private float wallCheckDistance = 0.2f;
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private float wallSlideSpeed = 2f;
+    [SerializeField] private float wallStickDelay = 0.5f;  // Temps abans de comen√ßar a caure lentament
+
+    private bool isTouchingWall;
+    private bool isWallSliding;
+    private float wallStickTimer;
+    private int wallSlideDirection; // -1 esquerra, 1 dreta
 
 
     //Temporal
@@ -103,26 +117,29 @@ public class PlayerController : MonoBehaviour
             {
                 transform.eulerAngles = Vector3.zero;
             }
-
             if (Input.GetButtonDown("Jump") && JumpCount < GameManager.instance.GetGameData.MaxJumps)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
                 JumpCount++;
             }
+
             CheckJump();
 
             //DispararFireBall
 
-            if (Input.GetButtonDown("FireBall"))
+            if (GameManager.instance.GetGameData.HasFireBall == true)
             {
-                if (coldDown <= timePasFireBall && GameManager.instance.GetGameData.PlayerMana >= costFireBall)
+                if (Input.GetButtonDown("FireBall"))
                 {
-                    Instantiate(fireballPrefab, spawnPoint.position, spawnPoint.rotation);
-                    GameManager.instance.GetGameData.PlayerMana -= costFireBall;
-                    levelManager.UpdateMana();
-                    timePasFireBall = 0;
-                }
+                    if (coldDown <= timePasFireBall && GameManager.instance.GetGameData.PlayerMana >= costFireBall)
+                    {
+                        Instantiate(fireballPrefab, spawnPoint.position, spawnPoint.rotation);
+                        GameManager.instance.GetGameData.PlayerMana -= costFireBall;
+                        levelManager.UpdateMana();
+                        timePasFireBall = 0;
+                    }
 
+                }
             }
         }
         else
@@ -152,35 +169,45 @@ public class PlayerController : MonoBehaviour
 
 
         //Dash
-
-        if (Input.GetButtonDown("Dash") && dashCoolTimer <= 0 && comboCount == 0)
+        if (GameManager.instance.GetGameData.CanDash == true)
         {
-            if (isGrounded)
+            if (Input.GetButtonDown("Dash") && dashCoolTimer <= 0 && comboCount == 0 && isTouchingWall == false)
             {
-                StartDash();
+                if (isGrounded)
+                {
+                    StartDash();
 
-                usedDashThisAir = false;   //assegura dash infinit al terra
+                    usedDashThisAir = false;   //assegura dash infinit al terra
+                }
+                else if (!usedDashThisAir)
+                {
+                    StartDash();
+                    usedDashThisAir = true;    // nomÔøΩs gastem dash a lÔøΩaire
+                }
             }
-            else if (!usedDashThisAir)
+
+            HandleDash();
+
+        }
+
+        //Crouch
+        if (GameManager.instance.GetGameData.CanCrouch == true)
+        {
+            if (Input.GetButtonDown("Crouch"))
             {
-                StartDash();
-                usedDashThisAir = true;    // nomÈs gastem dash a líaire
+                animator.SetBool("IsCrouch", true);
+            }
+            else if (Input.GetButtonUp("Crouch"))
+            {
+                animator.SetBool("IsCrouch", false);
+
             }
         }
 
-        HandleDash();
-
-
-
-        //Crouch
-
-       if (Input.GetButtonDown("Crouch"))
+        //WallJump
+        if (GameManager.instance.GetGameData.CanGrabWall == true)
         {
-            animator.SetBool("IsCrouch", true);
-        }else if (Input.GetButtonUp("Crouch"))
-        {
-            animator.SetBool("IsCrouch", false);
-
+            CheckWallSlide();
         }
 
     }
@@ -326,7 +353,7 @@ public class PlayerController : MonoBehaviour
             dashTimer -= Time.deltaTime;
             float dir = transform.eulerAngles.y == 0 ? 1f : -1f;
 
-            // MantÈ Y per gravetat
+            // MantÔøΩ Y per gravetat
 
             //rb.linearVelocity = new Vector2(dir * dashForce, rb.linearVelocity.y);
             rb.AddForce(new Vector2(dir * dashForce, 0f), ForceMode2D.Impulse);
@@ -360,8 +387,43 @@ public class PlayerController : MonoBehaviour
         levelManager.UpdateMana();
     }
 
+    //WallJump
+    private void CheckWallSlide()
+    {
 
+        Vector2 dir = wallCheck.right;
+        RaycastHit2D hit = Physics2D.Raycast(wallCheck.position, dir, wallCheckDistance, groundLayer);
 
+        //Debug.DrawRay(wallCheck.position, dir * wallCheckDistance, Color.red);
+
+        // Comprovar si toca la paret
+        isTouchingWall = hit.collider != null;
+
+        // Enganxar si toca la paret i eta al aire
+        if (isTouchingWall && !isGrounded && rb.linearVelocity.y < 0)
+        {
+            isWallSliding = true;
+            animator.SetBool("IsHowall", true);
+            //slow caigud vertc
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
+
+            //reset Jumps
+            JumpCount = 0;
+        }
+        else
+        {
+            isWallSliding = false;
+            
+
+        }
+
+        if (isTouchingWall == false)
+        {
+
+            animator.SetBool("IsHowall", false);
+        }
+    }
 }
+
 
 
