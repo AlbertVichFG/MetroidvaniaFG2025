@@ -3,41 +3,58 @@ using UnityEngine;
 public class SkullBomb : MonoBehaviour
 {
     [Header("Stats")]
-    public float life = 10f;
-    public float dmg = 10f;
-    public float speed = 3f;
+    [SerializeField]
+    private float life;
+    [SerializeField]
+    private float acceleration;
+    [SerializeField]
+    private float maxSpeed ;
 
     [Header("Explosion")]
-    public float explosionRadius = 2f;
-    public float explosionDamage = 25f;
-    public LayerMask playerMask;
-    public GameObject explosionFx;
+    [SerializeField]
+    private float explosionRadius = 2f;
+    [SerializeField]
+    private float explosionDamage = 25f;
+    [SerializeField]
+    private float knockbackHorizontal = 8f;
+    [SerializeField]
+    private float knockbackVertical = 5f;
+    [SerializeField]
+    private LayerMask playerMask;
+
 
     [Header("References")]
     public Rigidbody2D rb;
-    public Animator animator;
+    public Animator animator; 
     public Transform player;
+    [SerializeField]
+    public bool isSkull;
 
     private bool playerDetected = false;
-    private bool exploded = false;
+    private bool isDead = false;
 
-    void Start()
+    private void Start()
     {
-        animator.Play("Idle");
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        isSkull = true;
     }
 
     void Update()
     {
-        if (!playerDetected || exploded) return;
+        if (!playerDetected || isDead) return;
 
-        // Moviment cap al player
-        Vector2 dir = (player.position - transform.position).normalized;
-        rb.linearVelocity = new Vector2(dir.x * speed, rb.linearVelocity.y);
+        // Direcció flotant cap al player (no cau)
+        Vector2 direction = (player.position - transform.position).normalized;
+
+        rb.AddForce(direction * acceleration);
+
+        // Limitem la velocitat per evitar que surti volant
+        rb.linearVelocity = Vector2.ClampMagnitude(rb.linearVelocity, maxSpeed);
 
         animator.Play("Fly");
     }
 
-    // Detecta el player the same as EnemyController
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -45,18 +62,17 @@ public class SkullBomb : MonoBehaviour
             playerDetected = true;
             player = other.transform;
 
-            animator.SetTrigger("Alert");
         }
     }
 
-    // Rep dany
     public void TakeDmg(float amount)
     {
-        life -= amount;
+        if (isDead) return;
 
+        life -= amount;
         if (life <= 0)
         {
-            Explode();
+            Die();
         }
         else
         {
@@ -66,42 +82,57 @@ public class SkullBomb : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (exploded) return;
-
-        if (collision.collider.CompareTag("Player"))
+        if (isDead) return;
+        
+        if (collision.collider.CompareTag("Player") || collision.collider.CompareTag("Ground"))
         {
-            collision.collider.GetComponent<PlayerController>()?.TakeDmg(dmg);
-            Explode();
+            animator.SetTrigger("Hit");
         }
+        Die();
+        
 
-        if (collision.collider.CompareTag("Ground"))
-        {
-            Explode();
-        }
     }
 
-    void Explode()
+    private void Die()
     {
-        if (exploded) return;
-        exploded = true;
+        if (isDead) return;
+        
+        isDead = true;
 
         rb.linearVelocity = Vector2.zero;
-        rb.gravityScale = 0;
         GetComponent<Collider2D>().enabled = false;
 
-        animator.Play("Death");
+        animator.SetTrigger("Hit");
 
-        // FX
-        if (explosionFx)
-            Instantiate(explosionFx, transform.position, Quaternion.identity);
+        DoExplosionDamage();
 
-        // AOE damage
-        Collider2D[] hit = Physics2D.OverlapCircleAll(transform.position, explosionRadius, playerMask);
-        foreach (Collider2D h in hit)
+        Destroy(gameObject, 0.5f);
+    }
+
+    void DoExplosionDamage()
+    {
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, explosionRadius, playerMask);
+
+        foreach (Collider2D h in hits)
         {
-            h.GetComponent<PlayerController>()?.TakeDmg(explosionDamage);
-        }
+            PlayerController player = h.GetComponent<PlayerController>();
+            if (player != null)
+            {
+                // Dmg
+                player.TakeDmg(explosionDamage);
 
-        Destroy(gameObject, 0.4f);
+                // Knockback
+                Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
+                    // Direcció horitzontal: cap al costat oposat de la bomba
+                    float dirX = Mathf.Sign(player.transform.position.x - transform.position.x);
+
+                    Vector2 force = new Vector2(dirX * knockbackHorizontal, knockbackVertical);
+                    rb.linearVelocity = Vector2.zero; // reset de velocitat per consistència
+                    rb.AddForce(force, ForceMode2D.Impulse);
+                }
+            }
+        }
     }
 }

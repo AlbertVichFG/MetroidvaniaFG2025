@@ -270,14 +270,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //Atacar enemic
+    //Atacar a enemic 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        SkullBomb skull = collision.gameObject.GetComponent<SkullBomb>();
+        if (collision.gameObject.tag == "Enemy" && skull.isSkull == false)
         {
             int comboAnimator = animator.GetInteger("Comboo");
             if (comboAnimator > 0)
             {
+
                 try
                 {
                     collision.gameObject.GetComponent<EnemyController>().TakeDmg(GameManager.instance.GetGameData.PlayerDmg);
@@ -300,6 +302,24 @@ public class PlayerController : MonoBehaviour
             }
 
             RecoveryMana();
+        }
+        if (collision.gameObject.tag == "Enemy" && skull.isSkull == true)
+        {
+
+            int comboAnimator = animator.GetInteger("Comboo");
+            if (comboAnimator > 0)
+            {
+                collision.gameObject.GetComponent<SkullBomb>().TakeDmg(GameManager.instance.GetGameData.PlayerDmg);
+            }
+            else
+            {
+                collision.gameObject.GetComponent<SkullBomb>().TakeDmg(GameManager.instance.GetGameData.HeavyDmg);
+
+            }
+
+            RecoveryMana();
+
+
         }
     }
 

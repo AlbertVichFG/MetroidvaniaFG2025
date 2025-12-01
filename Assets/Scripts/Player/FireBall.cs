@@ -23,11 +23,17 @@ public class FireBall : MonoBehaviour
     {
         if (collision.transform.tag != "Player")
         {
+            SkullBomb skull = collision.gameObject.GetComponent<SkullBomb>();
+
             animator.SetTrigger("Death");
             speed = 0.75f;
-            if(collision.transform.tag == "Enemy")
+            if(collision.transform.tag == "Enemy" && skull.isSkull == false )
             {
                 collision.gameObject.GetComponent<EnemyController>().TakeDmg(GameManager.instance.GetGameData.FireballDmg);
+            }
+            if (collision.transform.tag == "Enemy" && skull.isSkull == true)
+            {
+                collision.gameObject.GetComponent<SkullBomb>().TakeDmg(GameManager.instance.GetGameData.FireballDmg);
             }
         }
     }
