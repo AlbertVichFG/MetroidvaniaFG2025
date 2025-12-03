@@ -53,7 +53,9 @@ public class ChestScript : MonoBehaviour
                 if (GameManager.instance.GetGameData.CanGrabWall == true)
                 {
                     GetComponent<Collider2D>().enabled = false;
+                    LetChestOpen();
                 }
+                 
 
                 break;
 
@@ -158,6 +160,7 @@ public class ChestScript : MonoBehaviour
     public void LetChestOpen()
     {
         GetComponent<SpriteRenderer>().sprite = openChestSprite;
+        Debug.Log(gameObject.GetComponent<SpriteRenderer>().sprite);
 
     }
 }

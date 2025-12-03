@@ -195,7 +195,7 @@ MonoBehaviour:
     canDash: 0
     hasFireBall: 0
     canCrouch: 0
-    canGrabWall: 0
+    canGrabWall: 1
   slot: 0
   comeFromLoadGame: 0
   doorToGo: 0
