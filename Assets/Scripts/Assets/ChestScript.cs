@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ChestScript : MonoBehaviour
@@ -55,7 +56,14 @@ public class ChestScript : MonoBehaviour
                     GetComponent<Collider2D>().enabled = false;
                     LetChestOpen();
                 }
-                 
+
+                break;
+            case "Heal":
+                if (GameManager.instance.GetGameData.CanHeal == true)
+                {
+                    GetComponent<Collider2D>().enabled = false;
+                    LetChestOpen();
+                }
 
                 break;
 
@@ -140,6 +148,11 @@ public class ChestScript : MonoBehaviour
                 GameManager.instance.GetGameData.CanGrabWall = true;
 
                 break;
+
+            case "Heal":
+                GameManager.instance.GetGameData.CanHeal = true;
+
+                    break;
             default:
 
                 break;

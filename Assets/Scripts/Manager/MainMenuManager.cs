@@ -3,32 +3,57 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-    [SerializeField]
+    [SerializeField] 
     private GameObject panelSlots;
     [SerializeField]
-    private GameObject panelCharacterSelect;
+    private GameObject panelMainMenu;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [System.Serializable]
+    public class SlotUIData
     {
-        
+        public int slotID;
+        public TMPro.TMP_Text titleText;
+        public GameObject deleteButton;
     }
 
-    // Update is called once per frame
-    void Update()
+    public SlotUIData[] slots;
+
+
+    private void Start()
     {
-        
+        RefreshSlots();
+    }
+
+    private void RefreshSlots()
+    {
+        foreach (var _slot in slots)
+        {
+            if (PlayerPrefs.HasKey("data" + _slot.slotID))
+            {
+                _slot.titleText.text = "CONTINUE";
+                _slot.deleteButton.SetActive(true);
+            }
+            else
+            {
+                _slot.titleText.text = "NEW GAME";
+                _slot.deleteButton.SetActive(false);
+            }
+        }
     }
 
 
     public void StartBttn()
     {
+        panelMainMenu.SetActive(false);
         panelSlots.SetActive(true);
+        RefreshSlots();
+        Time.timeScale = 1;
     }
+
 
     public void SlotBttn(int _slot)
     {
-        if (PlayerPrefs.HasKey("data" + _slot.ToString()))
+        if (PlayerPrefs.HasKey("data" + _slot))
         {
             GameManager.instance.slot = _slot;
             GameManager.instance.LoadGame();
@@ -50,15 +75,30 @@ public class MainMenuManager : MonoBehaviour
 
             GameManager.instance.GetGameData.CanDash = false;
             GameManager.instance.GetGameData.HasFireBall = false;
-            GameManager.instance.GetGameData.HasFireBall = false;
             GameManager.instance.GetGameData.CanCrouch = false;
             GameManager.instance.GetGameData.CanGrabWall = false;
+            GameManager.instance.GetGameData.CanHeal = false;
+
             SceneManager.LoadScene(1);
         }
     }
 
-    public void BackBttn()
-    {
 
+    public void DeleteSlot(int slotID)
+    {
+        PlayerPrefs.DeleteKey("data" + slotID);
+        RefreshSlots();
+    }
+
+
+    public void ExitButton()
+    {
+        Application.Quit();
+    }
+
+    public void BackToMM()
+    {
+        panelMainMenu.SetActive(true);
+        panelSlots.SetActive(false);
     }
 }

@@ -34,6 +34,8 @@ public class GameData
     private bool canCrouch;
     [SerializeField]
     private bool canGrabWall;
+    [SerializeField]
+    private bool canHeal;
 
 
     public float PlayerLIFE
@@ -123,5 +125,11 @@ public class GameData
     {
         get { return canGrabWall; }
         set { canGrabWall = value; }
+    }
+
+    public bool CanHeal
+    {
+        get { return canHeal; }
+        set { canHeal = value; }
     }
 }

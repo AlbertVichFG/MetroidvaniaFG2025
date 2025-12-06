@@ -56,11 +56,22 @@ public class PlayerController : MonoBehaviour
 
     //NEWWW--------------------------------------
     [Header("Wall Slide")]
-    [SerializeField] private Transform wallCheck;          // Un empty al lateral del jugador
+    [SerializeField] private Transform wallCheck;          
     [SerializeField] private float wallCheckDistance = 0.2f;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float wallSlideSpeed = 2f;
     [SerializeField] private float wallStickDelay = 0.5f;  // Temps abans de començar a caure lentament
+
+    [Header("Life Recovery")]
+    [SerializeField] 
+    private float lifeRecoveryAmount;
+    [SerializeField] 
+    private float manaCostLifeRecover; 
+    [SerializeField] 
+    private float recoverCooldown; // Temps mínim entre recuperacions
+
+    private float recoverTimer;
+
 
     private bool isTouchingWall;
     private bool isWallSliding;
@@ -89,11 +100,11 @@ public class PlayerController : MonoBehaviour
     {
         if (knockBack == true) return;
 
+        float horizontal = Input.GetAxis("Horizontal");
 
         //Moviment
         if (comboCount == 0)
         {
-            float horizontal = Input.GetAxis("Horizontal");
             rb.linearVelocity = new Vector2(speed * horizontal, rb.linearVelocity.y);
 
             if (horizontal == 0f)
@@ -208,6 +219,24 @@ public class PlayerController : MonoBehaviour
         if (GameManager.instance.GetGameData.CanGrabWall == true)
         {
             CheckWallSlide();
+        }
+
+
+        //Recuperar Vida
+
+        if (GameManager.instance.GetGameData.CanHeal == true)
+        {
+            recoverTimer += Time.deltaTime;
+
+            float vertical = Input.GetAxis("Vertical");
+
+            bool isQuiet = Mathf.Abs(horizontal) < 0.05f && comboCount == 0 && !isDashing; //Aixo ho fa quan esta quiet 100%
+
+            if (vertical < -0.1f && recoverTimer >= recoverCooldown && isQuiet)
+            {
+                RecoverLife();
+                recoverTimer = 0;
+            }
         }
 
     }
@@ -443,6 +472,22 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("IsHowall", false);
         }
     }
+
+    private void RecoverLife()
+    {
+        if (GameManager.instance.GetGameData.PlayerMana >= manaCostLifeRecover)
+        {
+            GameManager.instance.GetGameData.PlayerMana -= manaCostLifeRecover;
+            GameManager.instance.GetGameData.PlayerLIFE += lifeRecoveryAmount;
+
+            if (GameManager.instance.GetGameData.PlayerLIFE > GameManager.instance.GetGameData.PlayerMaxLife)
+                GameManager.instance.GetGameData.PlayerLIFE = GameManager.instance.GetGameData.PlayerMaxLife;
+
+            levelManager.UpdateMana();
+            levelManager.UpdateLife();
+        }
+    }
+
 }
 
 

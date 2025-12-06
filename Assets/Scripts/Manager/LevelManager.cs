@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
@@ -9,6 +10,15 @@ public class LevelManager : MonoBehaviour
     private Image manaBar;
     [SerializeField]
     private Transform[] doorsPoints;
+
+
+    [Header("Panels")]
+    [SerializeField]
+    public GameObject panelGameOver;
+    [SerializeField]
+    private GameObject panelPause;
+    [SerializeField]
+    private GameObject panelWin;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -46,5 +56,40 @@ public class LevelManager : MonoBehaviour
     {
         manaBar.fillAmount = GameManager.instance.GetGameData.PlayerMana / GameManager.instance.GetGameData.PlayerMaxMana;
 
+    }
+
+
+    public void MainMenuButton()
+    {
+        SceneManager.LoadScene(0);
+
+    }
+
+
+    public void GameOverPanel()
+    {
+        panelGameOver.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void Pause()
+    {
+        if (panelPause.activeInHierarchy == false)
+        {
+            panelPause.SetActive(true);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            panelPause.SetActive(false);
+            Time.timeScale = 1;
+        }
+    }
+
+
+    public void WinGameEnd()
+    {
+        Time.timeScale = 0;
+        panelWin.SetActive(true);
     }
 }
