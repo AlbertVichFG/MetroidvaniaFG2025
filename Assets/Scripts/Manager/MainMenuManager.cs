@@ -7,6 +7,9 @@ public class MainMenuManager : MonoBehaviour
     private GameObject panelSlots;
     [SerializeField]
     private GameObject panelMainMenu;
+    [SerializeField]
+    private GameObject panelAdvertence;
+
 
     [System.Serializable]
     public class SlotUIData
@@ -32,11 +35,13 @@ public class MainMenuManager : MonoBehaviour
             {
                 _slot.titleText.text = "CONTINUE";
                 _slot.deleteButton.SetActive(true);
+
             }
             else
             {
                 _slot.titleText.text = "NEW GAME";
                 _slot.deleteButton.SetActive(false);
+
             }
         }
     }
@@ -100,5 +105,11 @@ public class MainMenuManager : MonoBehaviour
     {
         panelMainMenu.SetActive(true);
         panelSlots.SetActive(false);
+    }
+
+    public void EndAdvertence()
+    {
+        panelAdvertence.SetActive(false);
+        panelMainMenu.SetActive(true);
     }
 }

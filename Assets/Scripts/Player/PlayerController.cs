@@ -226,16 +226,17 @@ public class PlayerController : MonoBehaviour
 
         if (GameManager.instance.GetGameData.CanHeal == true)
         {
+         
             recoverTimer += Time.deltaTime;
 
-            float vertical = Input.GetAxis("Vertical");
 
             bool isQuiet = Mathf.Abs(horizontal) < 0.05f && comboCount == 0 && !isDashing; //Aixo ho fa quan esta quiet 100%
 
-            if (vertical < -0.1f && recoverTimer >= recoverCooldown && isQuiet)
+            if (Input.GetAxis("Vertical") < -0.8f && recoverTimer >= recoverCooldown && isQuiet)
             {
                 RecoverLife();
                 recoverTimer = 0;
+                Debug.Log("He Recuperat Vida");
             }
         }
 
@@ -302,8 +303,8 @@ public class PlayerController : MonoBehaviour
     //Atacar a enemic 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        SkullBomb skull = collision.gameObject.GetComponent<SkullBomb>();
-        if (collision.gameObject.tag == "Enemy" && skull.isSkull == false)
+       // SkullBomb skull = collision.gameObject.GetComponent<SkullBomb>();
+        if (collision.gameObject.tag == "Enemy" /*&& skull.isSkull == false*/)
         {
             int comboAnimator = animator.GetInteger("Comboo");
             if (comboAnimator > 0)
@@ -332,7 +333,7 @@ public class PlayerController : MonoBehaviour
 
             RecoveryMana();
         }
-        if (collision.gameObject.tag == "Enemy" && skull.isSkull == true)
+        if (collision.gameObject.tag == "Enemy" /*&& skull.isSkull == true*/)
         {
 
             int comboAnimator = animator.GetInteger("Comboo");
@@ -475,13 +476,17 @@ public class PlayerController : MonoBehaviour
 
     private void RecoverLife()
     {
+        //Pot fer això per molt que tingui tota la vida igual que al HollowKnight per si em buscaves l'error jeje
+
         if (GameManager.instance.GetGameData.PlayerMana >= manaCostLifeRecover)
         {
             GameManager.instance.GetGameData.PlayerMana -= manaCostLifeRecover;
             GameManager.instance.GetGameData.PlayerLIFE += lifeRecoveryAmount;
 
             if (GameManager.instance.GetGameData.PlayerLIFE > GameManager.instance.GetGameData.PlayerMaxLife)
+            {
                 GameManager.instance.GetGameData.PlayerLIFE = GameManager.instance.GetGameData.PlayerMaxLife;
+            }
 
             levelManager.UpdateMana();
             levelManager.UpdateLife();

@@ -24,9 +24,9 @@ public class SkullBomb : MonoBehaviour
 
 
     [Header("References")]
-    public Rigidbody2D rb;
-    public Animator animator; 
-    public Transform player;
+    private Rigidbody2D rb;
+    private Animator animator; 
+    private Transform player;
     [SerializeField]
     public bool isSkull;
 
@@ -47,6 +47,15 @@ public class SkullBomb : MonoBehaviour
         // Direcció flotant cap al player (no cau)
         Vector2 direction = (player.position - transform.position).normalized;
 
+        // FLIP DEL SPRITE
+        if(direction.x > 0) { 
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else if (direction.x < 0){
+
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+
         rb.AddForce(direction * acceleration);
 
         // Limitem la velocitat per evitar que surti volant
@@ -65,11 +74,11 @@ public class SkullBomb : MonoBehaviour
         }
     }
 
-    public void TakeDmg(float amount)
+    public void TakeDmg(float _amount)
     {
         if (isDead) return;
 
-        life -= amount;
+        life -= _amount;
         if (life <= 0)
         {
             Die();

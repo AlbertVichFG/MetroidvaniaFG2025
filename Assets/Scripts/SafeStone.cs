@@ -8,6 +8,12 @@ public class SafeStone : MonoBehaviour
     [SerializeField]
     private bool inSafeZone;
 
+    private LevelManager levelManager;
+
+    private void Start()
+    {
+        levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -39,6 +45,11 @@ public class SafeStone : MonoBehaviour
                 GameManager.instance.GetGameData.SceneSave = SceneManager.GetActiveScene().buildIndex;
                 //Guardar partida
                 GameManager.instance.SaveGame();
+                GameManager.instance.GetGameData.PlayerMana = GameManager.instance.GetGameData.PlayerMaxMana;
+                GameManager.instance.GetGameData.PlayerLIFE = GameManager.instance.GetGameData.PlayerMaxLife;
+                levelManager.UpdateMana();
+                levelManager.UpdateLife();
+                Debug.Log("Guarda i Cura");
                 safeIcon.SetActive(false);
                 inSafeZone = false;
                 //Efecto de particluas si vols maco

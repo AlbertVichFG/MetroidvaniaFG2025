@@ -119,5 +119,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38bdb15a3f512c8409eb218328d52fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
-  sceneToGo: 1
+  sceneToGo: 2
   doorPoint: 1

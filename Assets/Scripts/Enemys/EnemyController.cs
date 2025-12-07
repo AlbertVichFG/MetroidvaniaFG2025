@@ -116,6 +116,10 @@ public class EnemyController : MonoBehaviour
      
      private void OnTriggerExit2D(Collider2D collision)
     {
+        //Si no quan el mato es torna a posar de peu!!
+        if (isDeath == true) return;
+
+        //S'atura quan surt 
         if (collision.gameObject.tag == "Player")
         {
             playerDetected = false;

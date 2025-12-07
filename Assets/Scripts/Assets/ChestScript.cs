@@ -16,6 +16,8 @@ public class ChestScript : MonoBehaviour
     private Sprite openChestSprite;
     [SerializeField]
     private bool chestIsOpen = false;
+    [SerializeField]
+    private GameObject gemmPanel;
 
     private void Start()
     {
@@ -159,7 +161,7 @@ public class ChestScript : MonoBehaviour
 
         }
         
-        Time.timeScale = 1;
+       // Deixar desactivat pel missatge gemma Time.timeScale = 1;
         transform.GetChild(0).gameObject.SetActive(false);
         GetComponent<Collider2D>().enabled = false;
         
@@ -175,5 +177,17 @@ public class ChestScript : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = openChestSprite;
         Debug.Log(gameObject.GetComponent<SpriteRenderer>().sprite);
 
+    }
+
+    public void ShowPanel()
+    {
+        gemmPanel.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void ClosePanel()
+    {
+        gemmPanel.SetActive(false);
+        Time.timeScale = 1;
     }
 }
