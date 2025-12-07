@@ -19891,7 +19891,8 @@ MonoBehaviour:
   lifeBar: {fileID: 7187079739591239229}
   manaBar: {fileID: 5494821872371951063}
   doorsPoints:
-  - {fileID: 0}
+  - {fileID: 493510472}
+  - {fileID: 721676843}
   panelGameOver: {fileID: 0}
   panelPause: {fileID: 8749990777272134841}
   panelWin: {fileID: 0}

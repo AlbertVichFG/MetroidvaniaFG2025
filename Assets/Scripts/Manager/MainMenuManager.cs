@@ -11,6 +11,7 @@ public class MainMenuManager : MonoBehaviour
     private GameObject panelAdvertence;
 
 
+
     [System.Serializable]
     public class SlotUIData
     {
@@ -24,8 +25,18 @@ public class MainMenuManager : MonoBehaviour
 
     private void Start()
     {
+        //Desactivar Panel Animacio
+        if (PlayerPrefs.GetInt("AdvertencePlayed", 0) == 1)
+        {
+            panelAdvertence.SetActive(false);
+            panelMainMenu.SetActive(true);
+        }
+
         RefreshSlots();
+
     }
+
+ 
 
     private void RefreshSlots()
     {
@@ -49,6 +60,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartBttn()
     {
+        Destroy(panelAdvertence);
         panelMainMenu.SetActive(false);
         panelSlots.SetActive(true);
         RefreshSlots();
@@ -111,5 +123,8 @@ public class MainMenuManager : MonoBehaviour
     {
         panelAdvertence.SetActive(false);
         panelMainMenu.SetActive(true);
+
+        //Guardar perque no torni a saltar l'anim del principi
+        PlayerPrefs.SetInt("AdvertencePlayed", 1);
     }
 }
