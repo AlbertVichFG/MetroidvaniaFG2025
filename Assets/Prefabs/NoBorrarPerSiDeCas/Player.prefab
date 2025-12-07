@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 7302414943147801850}
   - component: {fileID: 5185252960355856473}
   - component: {fileID: 1916573565197211077}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -320,10 +320,27 @@ MonoBehaviour:
   speed: 5
   jumpForce: 8
   groundDistance: 0.2
+  isGrounded: 0
+  manaRecovery: 0
   fireballPrefab: {fileID: 636694934114400224, guid: 754c21ceb45bb1c41968b2265affedc9, type: 3}
   spawnPoint: {fileID: 893765942066715766}
   coldDown: 2.5
   costFireBall: 5
+  knockBack: 0
+  knockBackTime: 0
+  dashForce: 20
+  dashDuration: 0.12
+  dashCooldown: 0.8
+  wallCheck: {fileID: 0}
+  wallCheckDistance: 0.2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  wallSlideSpeed: 2
+  wallStickDelay: 0.5
+  lifeRecoveryAmount: 0
+  manaCostLifeRecover: 0
+  recoverCooldown: 0
 --- !u!1 &8826362560487573705
 GameObject:
   m_ObjectHideFlags: 0

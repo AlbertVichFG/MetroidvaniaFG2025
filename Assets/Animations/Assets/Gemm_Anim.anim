@@ -20,7 +20,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.03, y: 0.53, z: 0}
+        value: {x: 0, y: 0.527, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -29,7 +29,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 3.5
-        value: {x: 0.03, y: 1.734, z: 0}
+        value: {x: 0, y: 1.715, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -38,7 +38,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 4
-        value: {x: 0.03, y: 1.574, z: 0}
+        value: {x: 0, y: 1.548, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -47,7 +47,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 4.6666665
-        value: {x: 0.03, y: 1.746, z: 0}
+        value: {x: 0, y: 1.719, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -57,7 +57,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: HealGeme
+    path: FireBallGeme
   m_ScaleCurves:
   - curve:
       serializedVersion: 2
@@ -82,7 +82,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 4
-        value: {x: 0.8409, y: 0.8409, z: 0.8409}
+        value: {x: 0.81144, y: 0.81144, z: 0.81144}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -91,7 +91,16 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 4.5
-        value: {x: 1.2373003, y: 1.2373003, z: 1.2373003}
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0.34766006, y: 0.34766006, z: 0.34766006}
+        outSlope: {x: 0.34766006, y: 0.34766006, z: 0.34766006}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 5
+        value: {x: 1.1591, y: 1.1591, z: 1.1591}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -99,7 +108,7 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 5
+        time: 5.1666665
         value: {x: 1, y: 1, z: 1}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
@@ -110,7 +119,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: HealGeme
+    path: FireBallGeme
   m_FloatCurves: []
   m_PPtrCurves: []
   m_SampleRate: 12
@@ -121,7 +130,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 2095762098
+      path: 2877543250
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -130,7 +139,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2095762098
+      path: 2877543250
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -166,7 +175,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.03
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -175,7 +184,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 3.5
-        value: 0.03
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -184,7 +193,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 4
-        value: 0.03
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -193,7 +202,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 4.6666665
-        value: 0.03
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -204,7 +213,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: HealGeme
+    path: FireBallGeme
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -214,7 +223,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.53
+        value: 0.527
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -223,7 +232,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 3.5
-        value: 1.734
+        value: 1.715
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -232,7 +241,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 4
-        value: 1.574
+        value: 1.548
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -241,7 +250,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 4.6666665
-        value: 1.746
+        value: 1.719
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -252,7 +261,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: HealGeme
+    path: FireBallGeme
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -300,7 +309,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: HealGeme
+    path: FireBallGeme
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -328,7 +337,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 4
-        value: 0.8409
+        value: 0.81144
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -337,7 +346,16 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 4.5
-        value: 1.2373003
+        value: 1
+        inSlope: 0.34766006
+        outSlope: 0.34766006
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 5
+        value: 1.1591
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -345,7 +363,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 5
+        time: 5.1666665
         value: 1
         inSlope: 0
         outSlope: 0
@@ -357,7 +375,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: HealGeme
+    path: FireBallGeme
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -385,7 +403,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 4
-        value: 0.8409
+        value: 0.81144
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -394,7 +412,16 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 4.5
-        value: 1.2373003
+        value: 1
+        inSlope: 0.34766006
+        outSlope: 0.34766006
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 5
+        value: 1.1591
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -402,7 +429,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 5
+        time: 5.1666665
         value: 1
         inSlope: 0
         outSlope: 0
@@ -414,7 +441,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: HealGeme
+    path: FireBallGeme
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -442,7 +469,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 4
-        value: 0.8409
+        value: 0.81144
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -451,7 +478,16 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 4.5
-        value: 1.2373003
+        value: 1
+        inSlope: 0.34766006
+        outSlope: 0.34766006
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 5
+        value: 1.1591
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -459,7 +495,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 5
+        time: 5.1666665
         value: 1
         inSlope: 0
         outSlope: 0
@@ -471,7 +507,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: HealGeme
+    path: FireBallGeme
     classID: 4
     script: {fileID: 0}
     flags: 0
