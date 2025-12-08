@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LanceGoblin
   speed: 7
+  dmg: 10
 --- !u!61 &8785186933600737556
 BoxCollider2D:
   m_ObjectHideFlags: 0

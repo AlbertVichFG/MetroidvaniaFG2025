@@ -15,6 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Dungeon.unity
     guid: 7ecffbc3c80e4734c9ce1ec62ec323f8
   - enabled: 1
+    path: Assets/Scenes/Dungeon_1.unity
+    guid: 31985d13b65ae4b4c9722119c136dfa4
+  - enabled: 1
+    path: Assets/Scenes/Dungeon_2.unity
+    guid: fa0eb43b2d310c74c9cc8557c9f2acaa
+  - enabled: 1
     path: Assets/Scenes/SafeZone.unity
     guid: 2675e0e81aba1ca478af0f6254a7474f
   - enabled: 1

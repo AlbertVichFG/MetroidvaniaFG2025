@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -57,5 +58,11 @@ public class GameManager : MonoBehaviour
             string data = PlayerPrefs.GetString("data" + slot.ToString());
             gameData =JsonUtility.FromJson<GameData>(data);
         }
+    }
+
+
+    public void RespawnDeath()
+    {
+        SceneManager.LoadScene(GameManager.instance.GetGameData.SceneSave);
     }
 }
