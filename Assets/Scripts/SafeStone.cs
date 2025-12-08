@@ -41,15 +41,18 @@ public class SafeStone : MonoBehaviour
         if (inSafeZone == true) {
             if(Input.GetAxis("Vertical") > 0.5f)
             {
-                //saber a quina escena estic
+                //saber a quina escena estic i posicio
                 GameManager.instance.GetGameData.SceneSave = SceneManager.GetActiveScene().buildIndex;
+                GameManager.instance.GetGameData.LastCheckpointPos = transform.position;
                 //Guardar partida
                 GameManager.instance.SaveGame();
+
                 GameManager.instance.GetGameData.PlayerMana = GameManager.instance.GetGameData.PlayerMaxMana;
                 GameManager.instance.GetGameData.PlayerLIFE = GameManager.instance.GetGameData.PlayerMaxLife;
+               
                 levelManager.UpdateMana();
                 levelManager.UpdateLife();
-                Debug.Log("Guarda i Cura");
+                Debug.Log("Checkpoint guardat a: " + transform.position);
                 safeIcon.SetActive(false);
                 inSafeZone = false;
                 //Efecto de particluas si vols maco

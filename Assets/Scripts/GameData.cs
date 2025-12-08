@@ -132,4 +132,14 @@ public class GameData
         get { return canHeal; }
         set { canHeal = value; }
     }
+
+
+    //Safe a veure si funciona
+    [SerializeField] 
+    private Vector3 lastCheckpointPos;
+    public Vector3 LastCheckpointPos
+    {
+        get { return lastCheckpointPos; }
+        set { lastCheckpointPos = value; }
+    }
 }

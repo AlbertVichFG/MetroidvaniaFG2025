@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,6 +11,9 @@ public class LevelManager : MonoBehaviour
     private Image manaBar;
     [SerializeField]
     private Transform[] doorsPoints;
+
+    GameManager gameManager;
+
 
 
     [Header("Panels")]
@@ -24,6 +28,41 @@ public class LevelManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Start()
     {
+        //Aqui hem tirat de CHAT GPT no aconseguia que al morir fes spwan a la safeStone
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        if (GameManager.instance.comeFromLoadGame)
+        {
+            // El jugador ve de carregar partida
+            GameManager.instance.comeFromLoadGame = false;
+
+            // Carregar escena i posició guardada
+            Vector3 spawnPos = GameManager.instance.GetGameData.LastCheckpointPos;
+
+            if (spawnPos == Vector3.zero)
+            {
+                if (doorsPoints.Length > 0)
+                    spawnPos = doorsPoints[GameManager.instance.doorToGo].position;
+            }
+
+            player.transform.position = spawnPos;
+            player.transform.rotation = Quaternion.identity;
+        }
+        else
+        {
+            // Spawn normal del nivell (portes)
+            player.transform.position = doorsPoints[GameManager.instance.doorToGo].position;
+            player.transform.rotation = doorsPoints[GameManager.instance.doorToGo].rotation;
+        }
+
+        UpdateMana();
+        UpdateLife();
+
+        ///////////////////////////        
+        /*
+
+        gameManager = GetComponent<GameManager>();
         if (GameManager.instance.comeFromLoadGame == true)
         {
             GameManager.instance.comeFromLoadGame = false;
@@ -38,7 +77,7 @@ public class LevelManager : MonoBehaviour
                 doorsPoints[GameManager.instance.doorToGo].position;
             GameObject.FindGameObjectWithTag("Player").transform.rotation =
                 doorsPoints[GameManager.instance.doorToGo].rotation;
-        }
+        }*/
     }
 
     // Update is called once per frame
@@ -89,14 +128,21 @@ public class LevelManager : MonoBehaviour
 
     public void WinGameEnd()
     {
-        Time.timeScale = 0;
+        
         panelWin.SetActive(true);
+        Time.timeScale = 0;
     }
+
+    //Swapn on toca?
 
     public void RespawnDeath()
     {
         Time.timeScale = 1;
 
+        GameManager.instance.comeFromLoadGame = true;
+        GameManager.instance.LoadGame();
         SceneManager.LoadScene(GameManager.instance.GetGameData.SceneSave);
     }
+
+
 }

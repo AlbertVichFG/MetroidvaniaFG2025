@@ -9,7 +9,12 @@ public class GameManager : MonoBehaviour
     public int slot;
     public bool comeFromLoadGame; 
 
+
+
     public int doorToGo;
+
+
+    public bool comeFromDeath = false;
 
     private void Awake()
     {
@@ -57,9 +62,10 @@ public class GameManager : MonoBehaviour
         {
             string data = PlayerPrefs.GetString("data" + slot.ToString());
             gameData =JsonUtility.FromJson<GameData>(data);
+
         }
     }
 
 
-
+  
 }

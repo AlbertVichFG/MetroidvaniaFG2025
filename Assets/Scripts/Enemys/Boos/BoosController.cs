@@ -19,6 +19,8 @@ public class BoosController : MonoBehaviour
     private float knockBackforce;
     [SerializeField]
     private Sprite dieSprite;
+    [SerializeField] 
+    public bool isDeathBoss;
 
     [SerializeField]
     private float waitingTime;
@@ -71,10 +73,8 @@ public class BoosController : MonoBehaviour
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
 
-        /*Test Only!
-        currentState = BossStates.Spikes;
-        *///////
-        //ChangeState();
+
+        ChangeState();
         
     }
 
@@ -87,6 +87,7 @@ public class BoosController : MonoBehaviour
         GetComponent<CapsuleCollider2D>().enabled = false;
         GetComponent<Rigidbody2D>().gravityScale = 0;
         this.enabled = false;
+        isDeathBoss = true;
 
     }
 
@@ -320,6 +321,7 @@ public class BoosController : MonoBehaviour
             GetComponent<Rigidbody2D>().gravityScale = 0;
             this.enabled = false;
             GameManager.instance.GetGameData.Boss1 = true;
+            isDeathBoss = true;
         }
         else
         {

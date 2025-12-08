@@ -16,6 +16,10 @@ public class PlayerController : MonoBehaviour
     private float manaRecovery;
     private int JumpCount;
     private int comboCount;
+    [SerializeField]
+    private BoosController boos;
+
+
 
 
     [Header("FireBall")]
@@ -41,6 +45,16 @@ public class PlayerController : MonoBehaviour
     private float dashDuration = 0.12f;
     [SerializeField]
     private float dashCooldown = 0.8f;
+    private int normalLayer;
+    private int dashLayer;
+
+    [Header("Crouch")]
+    private Vector2 originalOffset;
+    private Vector2 originalSize;
+    [SerializeField] 
+    private Vector2 crouchOffset = new Vector2(0.01151299f, 0.7719971f);
+    [SerializeField] 
+    private Vector2 crouchSize = new Vector2(0.7927632f, 1.277547f);
 
     private bool isDashing;
     private float dashTimer;
@@ -51,6 +65,7 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private Rigidbody2D rb;
     private LevelManager levelManager;
+    private BoxCollider2D colliderPlay;
 
     //NEWWW--------------------------------------
     [Header("Wall Slide")]
@@ -77,25 +92,32 @@ public class PlayerController : MonoBehaviour
     private int wallSlideDirection; // -1 esquerra, 1 dreta
 
 
-    //Temporal
 
 
 
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
         //Buscar lvlmanager en l'escena per nom
         levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+        colliderPlay = GetComponent<BoxCollider2D>();
+
+        //Coruch collider per poder modificar
+        originalOffset = colliderPlay.offset;
+        originalSize = colliderPlay.size;
+
+        //Dash "invencible sense caure"
+        normalLayer = LayerMask.NameToLayer("Player");
+        dashLayer = LayerMask.NameToLayer("PlayerDash");
 
     }
 
-    // Update is called once per frame
     void Update()
     {
+         
+
         if (knockBack == true) return;
 
         float horizontal = Input.GetAxis("Horizontal");
@@ -191,7 +213,7 @@ public class PlayerController : MonoBehaviour
                 else if (!usedDashThisAir)
                 {
                     StartDash();
-                    usedDashThisAir = true;    // nom�s gastem dash a l�aire
+                    usedDashThisAir = true;    // nomes gastem dash a l'aire
                 }
             }
 
@@ -202,13 +224,22 @@ public class PlayerController : MonoBehaviour
         //Crouch
         if (GameManager.instance.GetGameData.CanCrouch == true)
         {
+
             if (Input.GetButtonDown("Crouch"))
             {
                 animator.SetBool("IsCrouch", true);
+                // Aplicar collider petit
+                colliderPlay.offset = crouchOffset;
+                colliderPlay.size = crouchSize;
             }
             else if (Input.GetButtonUp("Crouch"))
             {
                 animator.SetBool("IsCrouch", false);
+
+                //tornar collider normal
+
+                colliderPlay.offset = originalOffset;
+                colliderPlay.size = originalSize;
 
             }
         }
@@ -333,7 +364,7 @@ public class PlayerController : MonoBehaviour
 
             RecoveryMana();
         }
-        if (collision.gameObject.tag == "Enemy" /*&& skull.isSkull == true*/)
+        /*if (collision.gameObject.tag == "Enemy" /*&& skull.isSkull == true)
         {
 
             int comboAnimator = animator.GetInteger("Comboo");
@@ -350,7 +381,12 @@ public class PlayerController : MonoBehaviour
             RecoveryMana();
 
 
+        }*/
+        if (collision.gameObject.tag == "Win" && boos.isDeathBoss == true)
+        {
+            levelManager.WinGameEnd();
         }
+
     }
 
     public void TakeDmg(float _dmg)
@@ -391,6 +427,8 @@ public class PlayerController : MonoBehaviour
         dashTimer = dashDuration;
         dashCoolTimer = dashCooldown;
 
+        // Canviar a layer invencible
+        gameObject.layer = dashLayer;
 
         comboCount = 0;
         animator.SetInteger("Comboo", 0);
@@ -404,7 +442,7 @@ public class PlayerController : MonoBehaviour
             dashTimer -= Time.deltaTime;
             float dir = transform.eulerAngles.y == 0 ? 1f : -1f;
 
-            // Mant� Y per gravetat
+            
 
             //rb.linearVelocity = new Vector2(dir * dashForce, rb.linearVelocity.y);
             rb.AddForce(new Vector2(dir * dashForce, 0f), ForceMode2D.Impulse);
@@ -413,11 +451,16 @@ public class PlayerController : MonoBehaviour
             if (dashTimer <= 0f)
             {
                 isDashing = false;
+                //tornar a layerNormal
+                gameObject.layer = normalLayer;
             }
         }
 
         // Cooldown
-        if (dashCoolTimer > 0f) dashCoolTimer -= Time.deltaTime;
+        if (dashCoolTimer > 0f)
+        {
+            dashCoolTimer -= Time.deltaTime;
+        }
     }
 
 
@@ -475,6 +518,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Recuperar vida
     private void RecoverLife()
     {
         //Pot fer això per molt que tingui tota la vida igual que al HollowKnight per si em buscaves l'error jeje
@@ -494,7 +538,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
+    
 
 }
 

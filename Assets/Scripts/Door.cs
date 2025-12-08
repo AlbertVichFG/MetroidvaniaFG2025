@@ -13,8 +13,10 @@ public class Door : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+
             GameManager.instance.doorToGo = doorPoint;
             SceneManager.LoadScene(sceneToGo);
+
         }
     }
 }
