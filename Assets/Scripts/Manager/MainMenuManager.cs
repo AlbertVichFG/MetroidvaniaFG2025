@@ -79,6 +79,8 @@ public class MainMenuManager : MonoBehaviour
         }
         else
         {
+
+
             GameManager.instance.GetGameData = new GameData();
             GameManager.instance.slot = _slot;
             GameManager.instance.GetGameData.PlayerLIFE = 100;
@@ -98,6 +100,9 @@ public class MainMenuManager : MonoBehaviour
 
             SceneManager.LoadScene(1);
         }
+
+        Time.timeScale = 1;
+
     }
 
 

@@ -61,8 +61,5 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void RespawnDeath()
-    {
-        SceneManager.LoadScene(GameManager.instance.GetGameData.SceneSave);
-    }
+
 }

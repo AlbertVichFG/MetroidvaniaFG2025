@@ -14,8 +14,6 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     [SerializeField]
     private float manaRecovery;
-    /*[SerializeField]
-    public bool canDash;*/
     private int JumpCount;
     private int comboCount;
 
@@ -240,6 +238,8 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+
+
     }
 
     //Atacs personatge + animacio
@@ -359,8 +359,9 @@ public class PlayerController : MonoBehaviour
         levelManager.UpdateLife();
         if (GameManager.instance.GetGameData.PlayerLIFE <= 0)
         {
-            //Muerte
+
             animator.SetTrigger("Death");
+
             //Treure panel GameOver
             //Tornar punt guardat
         }
@@ -492,6 +493,8 @@ public class PlayerController : MonoBehaviour
             levelManager.UpdateLife();
         }
     }
+
+
 
 }
 

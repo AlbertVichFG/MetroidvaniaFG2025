@@ -92,4 +92,11 @@ public class LevelManager : MonoBehaviour
         Time.timeScale = 0;
         panelWin.SetActive(true);
     }
+
+    public void RespawnDeath()
+    {
+        Time.timeScale = 1;
+
+        SceneManager.LoadScene(GameManager.instance.GetGameData.SceneSave);
+    }
 }
