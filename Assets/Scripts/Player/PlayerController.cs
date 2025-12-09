@@ -269,6 +269,11 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if(Input.GetButtonDown("Pause"))
+        {
+            levelManager.Pause();
+        }
+
 
 
     }

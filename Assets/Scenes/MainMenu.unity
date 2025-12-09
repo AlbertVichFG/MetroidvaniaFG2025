@@ -2977,9 +2977,11 @@ MonoBehaviour:
     canCrouch: 0
     canGrabWall: 0
     canHeal: 0
+    lastCheckpointPos: {x: 0, y: 0, z: 0}
   slot: 0
   comeFromLoadGame: 0
   doorToGo: 0
+  comeFromDeath: 0
 --- !u!4 &1664643002
 Transform:
   m_ObjectHideFlags: 0

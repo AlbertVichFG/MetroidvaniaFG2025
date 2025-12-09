@@ -25,6 +25,7 @@ public class MainMenuManager : MonoBehaviour
 
     private void Start()
     {
+
         //Desactivar Panel Animacio
         if (PlayerPrefs.GetInt("AdvertencePlayed", 0) == 1)
         {
@@ -32,11 +33,11 @@ public class MainMenuManager : MonoBehaviour
             panelMainMenu.SetActive(true);
         }
 
-        RefreshSlots();
 
+
+        RefreshSlots();
     }
 
- 
 
     private void RefreshSlots()
     {

@@ -15,6 +15,21 @@ public class LevelManager : MonoBehaviour
     GameManager gameManager;
 
 
+    [Header("GEMMS")]
+    [SerializeField]
+    private Image gemmeHeal;
+    [SerializeField]
+    private Image gemmeFire;
+    [SerializeField]
+    private Image gemmeJumps;
+    [SerializeField]
+    private Image gemmeDash;
+    [SerializeField]
+    private Image gemmeWall;
+    [SerializeField]
+    private Image gemmeCrouch;
+    private string valorColorOriginal = "#FFFFFF";
+
 
     [Header("Panels")]
     [SerializeField]
@@ -59,25 +74,7 @@ public class LevelManager : MonoBehaviour
         UpdateMana();
         UpdateLife();
 
-        ///////////////////////////        
-        /*
 
-        gameManager = GetComponent<GameManager>();
-        if (GameManager.instance.comeFromLoadGame == true)
-        {
-            GameManager.instance.comeFromLoadGame = false;
-            GameObject.FindGameObjectWithTag("Player").transform.position = 
-                GameObject.Find("SafeStone").transform.position;
-            GameObject.FindGameObjectWithTag("Player").transform.rotation =
-                GameObject.Find("SafeStone").transform.rotation;
-        }
-        else
-        {
-            GameObject.FindGameObjectWithTag("Player").transform.position =
-                doorsPoints[GameManager.instance.doorToGo].position;
-            GameObject.FindGameObjectWithTag("Player").transform.rotation =
-                doorsPoints[GameManager.instance.doorToGo].rotation;
-        }*/
     }
 
     // Update is called once per frame
@@ -113,10 +110,12 @@ public class LevelManager : MonoBehaviour
 
     public void Pause()
     {
+        
         if (panelPause.activeInHierarchy == false)
         {
             panelPause.SetActive(true);
             Time.timeScale = 0;
+            GemmesUpdate();
         }
         else
         {
@@ -145,4 +144,33 @@ public class LevelManager : MonoBehaviour
     }
 
 
+    public void GemmesUpdate()
+    {
+
+        //aqui vaig fer el codi molt cutre i li he demanat a CHATGPT que mel faci bonic et deio una de mostra del que tenia jeje
+        /*var dates = GameManager.instance.GetGameData;
+        Color colorOriginal;
+        if (dates.CanHeal)
+        {
+            if (ColorUtility.TryParseHtmlString(valorColorOriginal, out colorOriginal))
+            {
+                gemmeHeal.color = colorOriginal;
+            }
+        }*/
+        // Obtenim les dades del joc amb comprovació de seguretat
+        var dates = GameManager.instance?.GetGameData;
+        if (dates == null) return;
+
+        // Convertim el valor hex a Color només una vegada
+        if (!ColorUtility.TryParseHtmlString(valorColorOriginal, out Color colorOriginal)) return;
+
+        if (dates.CanHeal && gemmeHeal != null) gemmeHeal.color = colorOriginal;
+        if (dates.HasFireBall && gemmeFire != null) gemmeFire.color = colorOriginal;
+        if (dates.MaxJumps > 1 && gemmeJumps != null) gemmeJumps.color = colorOriginal;
+        if (dates.CanDash && gemmeDash != null) gemmeDash.color = colorOriginal;
+        if (dates.CanGrabWall && gemmeWall != null) gemmeWall.color = colorOriginal;
+        if (dates.CanCrouch && gemmeCrouch != null) gemmeCrouch.color = colorOriginal;
+    }
 }
+
+
