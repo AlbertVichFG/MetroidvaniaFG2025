@@ -18,6 +18,8 @@ public class ChestScript : MonoBehaviour
     private bool chestIsOpen = false;
     [SerializeField]
     private GameObject gemmPanel;
+    [SerializeField]
+    private AudioClip chestSound, gemmeSound;
 
     private void Start()
     {
@@ -88,7 +90,8 @@ public class ChestScript : MonoBehaviour
             if (Input.GetButtonDown("Action"))
             {
                 animator.SetTrigger("OpenChest");
-               // animator.updateMode = AnimatorUpdateMode.Normal;
+                AudioManager.instance.PlaySFX(chestSound, 0.5f);
+                // animator.updateMode = AnimatorUpdateMode.Normal;
                 iconUI.SetActive(false);
                 Time.timeScale = 0;
                 SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();

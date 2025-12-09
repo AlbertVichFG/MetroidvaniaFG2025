@@ -230,11 +230,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ece6d049842713148adc52225b980709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoblinLanceController
-  life: 5
+  life: 20
   dmg: 5
-  speed: 1
+  speed: 2
   attacking: 0
   stopDistance: 5
+  isDeath: 0
   player: {fileID: 0}
   animator: {fileID: 0}
   lancePrefab: {fileID: 7447676637385445523, guid: 666aa908b4c0b484d82fc6f66663747b, type: 3}

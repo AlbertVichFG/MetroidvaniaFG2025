@@ -794,6 +794,7 @@ MonoBehaviour:
     lastCheckpointPos: {x: 0, y: 0, z: 0}
   slot: 0
   comeFromLoadGame: 0
+  cameFromGame: 0
   doorToGo: 0
   comeFromDeath: 0
 --- !u!4 &185888035
@@ -1872,10 +1873,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3019ee0e5caf44eacc838e3ba7499a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
-  player: {fileID: 0}
+  player: {fileID: 575999083}
   camOffset: {x: 0, y: 0, z: -10}
   minX: -5
-  maxX: 200
+  maxX: 68
   minY: 3
   maxY: 20
 --- !u!1 &546716007
@@ -2003,6 +2004,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &575999083 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9001273249016428874, guid: 99cb3086a035f3d4ebbbdab00674fcf8, type: 3}
+  m_PrefabInstance: {fileID: 1545405546}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &610301790 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6628784110255971136, guid: c92995f2899df7245950a1aec7dc81ae, type: 3}
@@ -2370,13 +2376,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 762989587736078487, guid: ccec188c8aaf6f645bffdbe8f521ec61, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ed58370eca27371418f7f8fa69626bf6, type: 2}
     - target: {fileID: 996353517669134118, guid: ccec188c8aaf6f645bffdbe8f521ec61, type: 3}
       propertyPath: m_LocalPosition.x
       value: 71.29
       objectReference: {fileID: 0}
     - target: {fileID: 996353517669134118, guid: ccec188c8aaf6f645bffdbe8f521ec61, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.65
+      value: 0.991
       objectReference: {fileID: 0}
     - target: {fileID: 996353517669134118, guid: ccec188c8aaf6f645bffdbe8f521ec61, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2416,7 +2426,7 @@ PrefabInstance:
       objectReference: {fileID: 825144996}
     - target: {fileID: 1773020316923547080, guid: ccec188c8aaf6f645bffdbe8f521ec61, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8617520048510284757, guid: ccec188c8aaf6f645bffdbe8f521ec61, type: 3}
       propertyPath: m_Name
@@ -33396,6 +33406,7 @@ MonoBehaviour:
   gemmeDash: {fileID: 2101141972}
   gemmeWall: {fileID: 2101141971}
   gemmeCrouch: {fileID: 2101141969}
+  musicBG: {fileID: 8300000, guid: d4cd898f60d578b478e6adda3647eac5, type: 3}
   panelGameOver: {fileID: 610301790}
   panelPause: {fileID: 825144995}
   panelWin: {fileID: 0}
@@ -33504,6 +33515,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1926171312
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1926171314}
+  - component: {fileID: 1926171313}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1926171313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926171312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b564b07fe747eb845b4ba3411d26fab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+--- !u!4 &1926171314
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926171312}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 33.97558, y: 17.07567, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1926457067
 GameObject:
   m_ObjectHideFlags: 0
@@ -34382,6 +34437,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Frog
       objectReference: {fileID: 0}
+    - target: {fileID: 7770904087993435268, guid: d6aa4c6dad3ca824ab04df136050f3f6, type: 3}
+      propertyPath: frogSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a45a9b3cfe6cb644bcc003ef7c43dc0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -34410,3 +34469,4 @@ SceneRoots:
   - {fileID: 825144991}
   - {fileID: 670233157}
   - {fileID: 1545405546}
+  - {fileID: 1926171314}

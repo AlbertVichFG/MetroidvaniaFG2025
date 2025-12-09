@@ -41,18 +41,13 @@ public class GhostController : EnemyController
         if (isDeath == true)
         {
             return;
-        }else
-        {
-            MoveInfinit();
         }
+        LookAtPlayer();
+        MoveInfinit();
 
-
-        if (attacking == true) {
-            if (shooting == false)
-            {
-
-                StartCoroutine(ShootPurple());
-            }
+        if (attacking && !shooting)
+        {
+            StartCoroutine(ShootPurple());
         }
 
     }
@@ -75,17 +70,18 @@ public class GhostController : EnemyController
     IEnumerator ShootPurple()
     {
         shooting = true;
-
+       
+        yield return new WaitForSeconds(0.2f);
         while (bullet < 3)
         {
-            
+            animator.SetBool("IsAttacking", true);
             // Debug.Log("Bullet: " + bullet);
             Instantiate(purpleShoot, spwanPoint.position, spwanPoint.rotation * Quaternion.Euler(0, 180, 0));
             bullet++;
             yield return new WaitForSeconds(shotDelay);
 
         }
-
+        animator.SetBool("IsAttacking", false);
         attacking = false;
 
         // Reinici
@@ -97,16 +93,21 @@ public class GhostController : EnemyController
 
     }
 
-
-
-   /* private void OnTriggerEnter2D(Collider2D collision)
+    private void LookAtPlayer()
     {
-        if( collision.gameObject.tag == "Player")
+        if (player == null) return;
+
+        float dir = player.position.x - transform.position.x;
+
+        if (dir > 0)
         {
-            Debug.Log("DETECTO EL PLAYER");
-            attacking = true;
+            transform.eulerAngles = new Vector3(0, 180, 0);
         }
-    }*/
+        else
+        {
+            transform.eulerAngles = Vector3.zero;
+        }
+    }
 
 
     //Stay aixi attacking es mante true i pot tornar a disparar

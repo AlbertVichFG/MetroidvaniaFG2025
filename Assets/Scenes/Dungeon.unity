@@ -409,6 +409,50 @@ Transform:
   - {fileID: 1050402138}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &128091565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 128091567}
+  - component: {fileID: 128091566}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &128091566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128091565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b564b07fe747eb845b4ba3411d26fab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+--- !u!4 &128091567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128091565}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 33.97558, y: 17.07567, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &141731661
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,6 +592,7 @@ MonoBehaviour:
     lastCheckpointPos: {x: 0, y: 0, z: 0}
   slot: 0
   comeFromLoadGame: 0
+  cameFromGame: 0
   doorToGo: 0
   comeFromDeath: 0
 --- !u!4 &185888035
@@ -1521,7 +1566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3019ee0e5caf44eacc838e3ba7499a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
-  player: {fileID: 0}
+  player: {fileID: 1511387449}
   camOffset: {x: 0, y: 0, z: -10}
   minX: -5
   maxX: 200
@@ -2461,7 +2506,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4638731559708254504, guid: 17478ae5dc1f176489fe42397a34d8f1, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4947081823963845035, guid: 17478ae5dc1f176489fe42397a34d8f1, type: 3}
       propertyPath: m_Name
@@ -2473,7 +2518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5174471726800181324, guid: 17478ae5dc1f176489fe42397a34d8f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.65
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 5174471726800181324, guid: 17478ae5dc1f176489fe42397a34d8f1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2511,6 +2556,10 @@ PrefabInstance:
       propertyPath: gemmPanel
       value: 
       objectReference: {fileID: 591925536}
+    - target: {fileID: 8388791264593209228, guid: 17478ae5dc1f176489fe42397a34d8f1, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 0978d38070fdf054a92688c3d18e7ad2, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2764,7 +2813,7 @@ GameObject:
   - component: {fileID: 1063803468}
   - component: {fileID: 1063803467}
   - component: {fileID: 1063803466}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tilemap
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -20839,6 +20888,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8260444164550107470, guid: 753feb4b57e57f04d9d1a55f6eb4ec2d, type: 3}
   m_PrefabInstance: {fileID: 1630674534}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1511387449 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9001273249016428874, guid: 99cb3086a035f3d4ebbbdab00674fcf8, type: 3}
+  m_PrefabInstance: {fileID: 1752067772}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1530454085
 GameObject:
   m_ObjectHideFlags: 0
@@ -21070,6 +21124,10 @@ PrefabInstance:
       propertyPath: acceleration
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3710954081283681172, guid: 753feb4b57e57f04d9d1a55f6eb4ec2d, type: 3}
+      propertyPath: explosionAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 860ee8fc9bd45144daf052e68207431e, type: 3}
     - target: {fileID: 7218863094485233284, guid: 753feb4b57e57f04d9d1a55f6eb4ec2d, type: 3}
       propertyPath: m_Name
       value: FireSkull
@@ -21666,6 +21724,7 @@ MonoBehaviour:
   gemmeDash: {fileID: 1955104618}
   gemmeWall: {fileID: 1955104617}
   gemmeCrouch: {fileID: 1955104615}
+  musicBG: {fileID: 8300000, guid: 38b6bee3d599f5146ba343c4ec36536f, type: 3}
   panelGameOver: {fileID: 825144992}
   panelPause: {fileID: 825144995}
   panelWin: {fileID: 0}
@@ -22466,3 +22525,4 @@ SceneRoots:
   - {fileID: 825144991}
   - {fileID: 879574617}
   - {fileID: 1752067772}
+  - {fileID: 128091567}

@@ -20,6 +20,13 @@ public class PlayerController : MonoBehaviour
     private BoosController boos;
 
 
+    [Header("Audios")]
+
+    [SerializeField]
+    private AudioClip fireAudio;
+    [SerializeField]
+    private AudioClip sword1Audio, sword2Audio, hitSwordAudio, healAudio; 
+
 
 
     [Header("FireBall")]
@@ -82,6 +89,9 @@ public class PlayerController : MonoBehaviour
     private float manaCostLifeRecover; 
     [SerializeField] 
     private float recoverCooldown; // Temps mínim entre recuperacions
+    [SerializeField] 
+    private ParticleSystem healWavePartycles;
+
 
     private float recoverTimer;
 
@@ -165,6 +175,7 @@ public class PlayerController : MonoBehaviour
                     if (coldDown <= timePasFireBall && GameManager.instance.GetGameData.PlayerMana >= costFireBall)
                     {
                         Instantiate(fireballPrefab, spawnPoint.position, spawnPoint.rotation);
+                        AudioManager.instance.PlaySFX(fireAudio, 0.5f);
                         GameManager.instance.GetGameData.PlayerMana -= costFireBall;
                         levelManager.UpdateMana();
                         timePasFireBall = 0;
@@ -187,12 +198,16 @@ public class PlayerController : MonoBehaviour
             {
                 comboCount = Mathf.Clamp(comboCount + 1, 0, 2);
                 animator.SetInteger("Comboo", comboCount);
+                AudioManager.instance.PlaySFX(sword1Audio, 0.5f);
+
 
             }
             if (Input.GetButtonDown("Fire2") && comboCount == 0)
             {
                 animator.SetTrigger("AttackHeavy");
                 comboCount = 1;
+                AudioManager.instance.PlaySFX(sword2Audio, 0.5f);
+
             }
         }
 
@@ -266,6 +281,7 @@ public class PlayerController : MonoBehaviour
                 RecoverLife();
                 recoverTimer = 0;
                 Debug.Log("He Recuperat Vida");
+
             }
         }
 
@@ -339,8 +355,8 @@ public class PlayerController : MonoBehaviour
     //Atacar a enemic 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       // SkullBomb skull = collision.gameObject.GetComponent<SkullBomb>();
-        if (collision.gameObject.tag == "Enemy" /*&& skull.isSkull == false*/)
+
+        if (collision.gameObject.tag == "Enemy")
         {
             int comboAnimator = animator.GetInteger("Comboo");
             if (comboAnimator > 0)
@@ -366,27 +382,11 @@ public class PlayerController : MonoBehaviour
                     collision.gameObject.GetComponent<BoosController>().TakeDmg(GameManager.instance.GetGameData.HeavyDmg);
                 }
             }
+            AudioManager.instance.PlaySFX(hitSwordAudio, 0.5f);
 
             RecoveryMana();
         }
-        /*if (collision.gameObject.tag == "Enemy" /*&& skull.isSkull == true)
-        {
 
-            int comboAnimator = animator.GetInteger("Comboo");
-            if (comboAnimator > 0)
-            {
-                collision.gameObject.GetComponent<SkullBomb>().TakeDmg(GameManager.instance.GetGameData.PlayerDmg);
-            }
-            else
-            {
-                collision.gameObject.GetComponent<SkullBomb>().TakeDmg(GameManager.instance.GetGameData.HeavyDmg);
-
-            }
-
-            RecoveryMana();
-
-
-        }*/
         if (collision.gameObject.tag == "Win" && boos.isDeathBoss == true)
         {
             levelManager.WinGameEnd();
@@ -532,6 +532,12 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.instance.GetGameData.PlayerMana -= manaCostLifeRecover;
             GameManager.instance.GetGameData.PlayerLIFE += lifeRecoveryAmount;
+            if (healWavePartycles != null)
+            {
+                AudioManager.instance.PlaySFX(healAudio, 0.5f);
+
+                healWavePartycles.Play();
+            }
 
             if (GameManager.instance.GetGameData.PlayerLIFE > GameManager.instance.GetGameData.PlayerMaxLife)
             {

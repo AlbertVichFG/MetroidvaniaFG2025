@@ -260,24 +260,7 @@ public class BoosController : MonoBehaviour
 
             StartCoroutine(collision.gameObject.GetComponent<PlayerController>().KnockBackCoroutine());
 
-            /*if (point.normal.y < 0)
-            {
-                if(point.normal.x > 0)//dreta
-                {
-                    collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.right * knockBackforce);
-                    StartCoroutine(collision.gameObject.GetComponent<PlayerController>().KnockBackCoroutine());
-                }
-                else //esquerra
-                {
-                    collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.left * knockBackforce);
-                    StartCoroutine(collision.gameObject.GetComponent<PlayerController>().KnockBackCoroutine());
-                                    }
-            }
-            else
-            {
-                collision.gameObject.GetComponent<Rigidbody2D>().AddForce(point.normal * knockBackforce);
-                StartCoroutine(collision.gameObject.GetComponent<PlayerController>().KnockBackCoroutine());
-            }*/
+
         }
         }
 

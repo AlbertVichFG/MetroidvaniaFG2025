@@ -21,6 +21,8 @@ public class SkullBomb : MonoBehaviour
     private float knockbackVertical = 5f;
     [SerializeField]
     private LayerMask playerMask;
+    [SerializeField]
+    private AudioClip explosionAudio;
 
 
     [Header("References")]
@@ -58,7 +60,7 @@ public class SkullBomb : MonoBehaviour
 
         rb.AddForce(direction * acceleration);
 
-        // Limitem la velocitat per evitar que surti volant
+        // Limit la velocitat 
         rb.linearVelocity = Vector2.ClampMagnitude(rb.linearVelocity, maxSpeed);
 
         animator.Play("Fly");
@@ -98,7 +100,9 @@ public class SkullBomb : MonoBehaviour
             animator.SetTrigger("Hit");
         }
         Die();
-        
+        AudioManager.instance.PlaySFX(explosionAudio, 0.5f);
+
+
 
     }
 

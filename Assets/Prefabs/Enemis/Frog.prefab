@@ -332,8 +332,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b7710c515a2674297740e8686df463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FrogController
-  life: 20
-  dmg: 1
+  life: 30
+  dmg: 15
   speed: 3
   attacking: 0
   stopDistance: 4.5

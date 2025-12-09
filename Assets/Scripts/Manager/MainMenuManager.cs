@@ -9,6 +9,8 @@ public class MainMenuManager : MonoBehaviour
     private GameObject panelMainMenu;
     [SerializeField]
     private GameObject panelAdvertence;
+    [SerializeField]
+    private AudioClip bgMusic;
 
 
 
@@ -25,15 +27,20 @@ public class MainMenuManager : MonoBehaviour
 
     private void Start()
     {
-
-        //Desactivar Panel Animacio
-        if (PlayerPrefs.GetInt("AdvertencePlayed", 0) == 1)
+        AudioManager.instance.PlayAmbient(bgMusic, 0.2f);
+        // Venim del joc  no volem l’animació
+        if (GameManager.instance.cameFromGame)
         {
             panelAdvertence.SetActive(false);
             panelMainMenu.SetActive(true);
+
+            //GameManager.instance.cameFromGame = false; // Reset
+            return;
         }
 
-
+        // Si estem iniciant el joc des de l'Editor (Play)  sempre animació
+        panelAdvertence.SetActive(true);
+        panelMainMenu.SetActive(false);
 
         RefreshSlots();
     }
@@ -61,6 +68,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartBttn()
     {
+        GameManager.instance.cameFromGame = true;
         Destroy(panelAdvertence);
         panelMainMenu.SetActive(false);
         panelSlots.SetActive(true);
@@ -86,11 +94,11 @@ public class MainMenuManager : MonoBehaviour
             GameManager.instance.slot = _slot;
             GameManager.instance.GetGameData.PlayerLIFE = 100;
             GameManager.instance.GetGameData.PlayerMaxLife = 100;
-            GameManager.instance.GetGameData.PlayerMana = 50;
-            GameManager.instance.GetGameData.PlayerMaxMana = 50;
-            GameManager.instance.GetGameData.PlayerDmg = 25;
-            GameManager.instance.GetGameData.FireballDmg = 15;
-            GameManager.instance.GetGameData.HeavyDmg = 35;
+            GameManager.instance.GetGameData.PlayerMana = 75;
+            GameManager.instance.GetGameData.PlayerMaxMana = 75;
+            GameManager.instance.GetGameData.PlayerDmg = 7;
+            GameManager.instance.GetGameData.FireballDmg = 30;
+            GameManager.instance.GetGameData.HeavyDmg = 15;
             GameManager.instance.GetGameData.MaxJumps = 1;
 
             GameManager.instance.GetGameData.CanDash = false;

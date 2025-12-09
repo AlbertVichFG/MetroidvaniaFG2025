@@ -7,9 +7,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameData gameData;
     public int slot;
-    public bool comeFromLoadGame; 
+    public bool comeFromLoadGame;
 
-
+    public bool cameFromGame = false;
 
     public int doorToGo;
 

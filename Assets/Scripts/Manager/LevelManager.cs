@@ -30,6 +30,9 @@ public class LevelManager : MonoBehaviour
     private Image gemmeCrouch;
     private string valorColorOriginal = "#FFFFFF";
 
+    [SerializeField]
+    public AudioClip musicBG;
+
 
     [Header("Panels")]
     [SerializeField]
@@ -74,6 +77,8 @@ public class LevelManager : MonoBehaviour
         UpdateMana();
         UpdateLife();
 
+
+        AudioManager.instance.PlayAmbient(musicBG, 0.1f);
 
     }
 

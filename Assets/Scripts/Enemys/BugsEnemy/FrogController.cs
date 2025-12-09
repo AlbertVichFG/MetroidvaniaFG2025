@@ -7,6 +7,8 @@ public class FrogController : EnemyController
     private float timeToLick;
     [SerializeField]
     private float frogCombo;
+    [SerializeField]
+    private AudioClip frogSound;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,6 +19,7 @@ public class FrogController : EnemyController
     // Update is called once per frame
     void Update()
     {
+
         base.Update();
         if (attacking == true)
         {
@@ -49,5 +52,10 @@ public class FrogController : EnemyController
             yield return new WaitForSeconds(timeToLick);
 
         }
+    }
+
+    public void playFrog()
+    {
+        AudioManager.instance.PlaySFX(frogSound, 0.5f);
     }
 }

@@ -167,8 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1857f1857d17464d875886a09bf30bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GhostController
-  life: 0
-  dmg: 0
+  life: 50
+  dmg: 5
   speed: 0
   attacking: 0
   stopDistance: 0

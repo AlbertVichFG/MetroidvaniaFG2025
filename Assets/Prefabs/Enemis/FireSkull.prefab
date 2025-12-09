@@ -197,17 +197,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c197e087d46f33d4eb77a72dc18a1c47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkullBomb
-  life: 5
-  acceleration: 5
-  maxSpeed: 6
+  life: 1
+  acceleration: 3
+  maxSpeed: 15
   explosionRadius: 2
-  explosionDamage: 25
+  explosionDamage: 30
+  knockbackHorizontal: 8
+  knockbackVertical: 5
   playerMask:
     serializedVersion: 2
     m_Bits: 1024
-  rb: {fileID: 0}
-  animator: {fileID: 0}
-  player: {fileID: 0}
+  explosionAudio: {fileID: 8300000, guid: 860ee8fc9bd45144daf052e68207431e, type: 3}
   isSkull: 0
 --- !u!50 &7451465632725545501
 Rigidbody2D:
