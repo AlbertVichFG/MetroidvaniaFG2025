@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 9140457985125301309}
   - component: {fileID: 6501727392798619997}
   - component: {fileID: 1093303470750516026}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SafeStone
   m_TagString: SafeStone
   m_Icon: {fileID: 0}

@@ -9,6 +9,7 @@ public class FrogController : EnemyController
     private float frogCombo;
     [SerializeField]
     private AudioClip frogSound;
+    private bool isLicking = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,7 +22,7 @@ public class FrogController : EnemyController
     {
 
         base.Update();
-        if (attacking == true)
+        if (attacking == true && !isLicking)
         {
             StartCoroutine(LametazoAtackCoroutine());
         }
@@ -29,6 +30,8 @@ public class FrogController : EnemyController
 
     IEnumerator LametazoAtackCoroutine()
     {
+        isLicking = true;
+
         if (frogCombo == 0)
         {
             animator.SetBool("IsAttacking", true);
@@ -46,12 +49,16 @@ public class FrogController : EnemyController
 
             // 
             frogCombo = 0;
+            isLicking = false;
+            yield break;
         }
-        else
-        {
-            yield return new WaitForSeconds(timeToLick);
+        yield return new WaitForSeconds(timeToLick);
 
-        }
+        // REBRE HIT i seguir l’atac
+        if (!isDeath)
+            attacking = true;
+
+        isLicking = false;
     }
 
     public void playFrog()

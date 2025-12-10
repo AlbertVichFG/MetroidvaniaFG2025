@@ -67,7 +67,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 8
+  m_Radius: 5.03
 --- !u!1 &7218863094485233284
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,8 +198,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkullBomb
   life: 1
-  acceleration: 3
-  maxSpeed: 15
+  acceleration: 2
+  maxSpeed: 20
   explosionRadius: 2
   explosionDamage: 30
   knockbackHorizontal: 8

@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
@@ -18,7 +19,7 @@ public class MainMenuManager : MonoBehaviour
     public class SlotUIData
     {
         public int slotID;
-        public TMPro.TMP_Text titleText;
+        public TMP_Text titleText;
         public GameObject deleteButton;
     }
 
@@ -85,6 +86,8 @@ public class MainMenuManager : MonoBehaviour
             GameManager.instance.LoadGame();
             GameManager.instance.comeFromLoadGame = true;
             SceneManager.LoadScene(GameManager.instance.GetGameData.SceneSave);
+            GameManager.instance.GetGameData.PlayerLIFE = GameManager.instance.GetGameData.PlayerMaxLife;
+            GameManager.instance.GetGameData.PlayerMana = GameManager.instance.GetGameData.PlayerMaxMana;
         }
         else
         {
