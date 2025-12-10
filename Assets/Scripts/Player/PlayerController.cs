@@ -431,6 +431,7 @@ public class PlayerController : MonoBehaviour
         isDashing = true;
         dashTimer = dashDuration;
         dashCoolTimer = dashCooldown;
+        animator.SetTrigger("Dash");
 
         // Canviar a layer invencible
         gameObject.layer = dashLayer;
@@ -442,8 +443,10 @@ public class PlayerController : MonoBehaviour
 
     private void HandleDash()
     {
+
         if (isDashing)
         {
+            
             dashTimer -= Time.deltaTime;
             float dir = transform.eulerAngles.y == 0 ? 1f : -1f;
 
@@ -455,6 +458,7 @@ public class PlayerController : MonoBehaviour
 
             if (dashTimer <= 0f)
             {
+
                 isDashing = false;
                 //tornar a layerNormal
                 gameObject.layer = normalLayer;

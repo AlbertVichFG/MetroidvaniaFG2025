@@ -14,7 +14,7 @@ public class MainMenuManager : MonoBehaviour
     private AudioClip bgMusic;
 
 
-
+    // Infocada slot partida
     [System.Serializable]
     public class SlotUIData
     {
@@ -29,7 +29,7 @@ public class MainMenuManager : MonoBehaviour
     private void Start()
     {
         AudioManager.instance.PlayAmbient(bgMusic, 0.2f);
-        // Venim del joc  no volem l’animació
+        // Venim del joc no anim inicial
         if (GameManager.instance.cameFromGame)
         {
             panelAdvertence.SetActive(false);
@@ -39,7 +39,6 @@ public class MainMenuManager : MonoBehaviour
             return;
         }
 
-        // Si estem iniciant el joc des de l'Editor (Play)  sempre animació
         panelAdvertence.SetActive(true);
         panelMainMenu.SetActive(false);
 
