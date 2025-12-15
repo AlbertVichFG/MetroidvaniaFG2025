@@ -124,25 +124,28 @@ public class SkullBomb : MonoBehaviour
 
     void DoExplosionDamage()
     {
+        // Tots colliders dins del cercle nomes layer playerMask
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, explosionRadius, playerMask);
 
+        // Recorre tots els colliders trobats dins del cercle
         foreach (Collider2D h in hits)
         {
+
             PlayerController player = h.GetComponent<PlayerController>();
             if (player != null)
             {
-                // Dmg
                 player.TakeDmg(explosionDamage);
 
-                // Knockback
+                //knockback
                 Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
                 if (rb != null)
                 {
-                    // Direcció horitzontal: cap al costat oposat de la bomba
+                    // kalcula dire horitz knockback.
                     float dirX = Mathf.Sign(player.transform.position.x - transform.position.x);
-
                     Vector2 force = new Vector2(dirX * knockbackHorizontal, knockbackVertical);
-                    rb.linearVelocity = Vector2.zero; // reset de velocitat per consistència
+
+                    // Neteja velocitat abans impuls x evitar moviments raros
+                    rb.linearVelocity = Vector2.zero;
                     rb.AddForce(force, ForceMode2D.Impulse);
                 }
             }

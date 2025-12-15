@@ -12614,7 +12614,7 @@ MonoBehaviour:
   gemmeDash: {fileID: 357250324}
   gemmeWall: {fileID: 357250323}
   gemmeCrouch: {fileID: 357250321}
-  musicBG: {fileID: 0}
+  musicBG: {fileID: 8300000, guid: 26410562a22616d4fac5ca883c3930aa, type: 3}
   panelGameOver: {fileID: 1150662165}
   panelPause: {fileID: 1558426155}
   panelWin: {fileID: 0}
